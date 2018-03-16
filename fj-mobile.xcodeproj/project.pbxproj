@@ -14,6 +14,9 @@
 		48B49F03205C744400B1AA8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48B49F01205C744400B1AA8B /* LaunchScreen.storyboard */; };
 		48B49F0E205C744400B1AA8B /* fj_mobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B49F0D205C744400B1AA8B /* fj_mobileTests.swift */; };
 		48B49F19205C744400B1AA8B /* fj_mobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B49F18205C744400B1AA8B /* fj_mobileUITests.swift */; };
+		48B49F2A205C74A000B1AA8B /* Campaigns.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48B49F28205C74A000B1AA8B /* Campaigns.storyboard */; };
+		48B49F2D205C74F500B1AA8B /* AddCampaign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48B49F2B205C74F500B1AA8B /* AddCampaign.storyboard */; };
+		48B49F2F205C752900B1AA8B /* ViewCampaignVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48B49F2E205C752900B1AA8B /* ViewCampaignVC.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		48B49F14205C744400B1AA8B /* fj-mobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fj-mobileUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B49F18205C744400B1AA8B /* fj_mobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fj_mobileUITests.swift; sourceTree = "<group>"; };
 		48B49F1A205C744400B1AA8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48B49F29205C74A000B1AA8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "fj-mobile/Storyboards/Base.lproj/Campaigns.storyboard"; sourceTree = "<group>"; };
+		48B49F2C205C74F500B1AA8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "fj-mobile/Storyboards/fj-mobile/Storyboards/Base.lproj/AddCampaign.storyboard"; sourceTree = "<group>"; };
+		48B49F2E205C752900B1AA8B /* ViewCampaignVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewCampaignVC.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				48B49EF8205C744400B1AA8B /* AppDelegate.swift */,
-				48B49EFA205C744400B1AA8B /* ViewController.swift */,
-				48B49EFC205C744400B1AA8B /* Main.storyboard */,
+				48B49F27205C746500B1AA8B /* ViewControllers */,
+				48B49F26205C745500B1AA8B /* Storyboards */,
 				48B49EFF205C744400B1AA8B /* Assets.xcassets */,
 				48B49F01205C744400B1AA8B /* LaunchScreen.storyboard */,
 				48B49F04205C744400B1AA8B /* Info.plist */,
@@ -123,6 +129,25 @@
 				48B49F1A205C744400B1AA8B /* Info.plist */,
 			);
 			path = "fj-mobileUITests";
+			sourceTree = "<group>";
+		};
+		48B49F26205C745500B1AA8B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				48B49EFC205C744400B1AA8B /* Main.storyboard */,
+				48B49F28205C74A000B1AA8B /* Campaigns.storyboard */,
+				48B49F2E205C752900B1AA8B /* ViewCampaignVC.storyboard */,
+				48B49F2B205C74F500B1AA8B /* AddCampaign.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		48B49F27205C746500B1AA8B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				48B49EFA205C744400B1AA8B /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +259,9 @@
 			files = (
 				48B49F03205C744400B1AA8B /* LaunchScreen.storyboard in Resources */,
 				48B49F00205C744400B1AA8B /* Assets.xcassets in Resources */,
+				48B49F2F205C752900B1AA8B /* ViewCampaignVC.storyboard in Resources */,
+				48B49F2D205C74F500B1AA8B /* AddCampaign.storyboard in Resources */,
+				48B49F2A205C74A000B1AA8B /* Campaigns.storyboard in Resources */,
 				48B49EFE205C744400B1AA8B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +338,22 @@
 				48B49F02205C744400B1AA8B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		48B49F28205C74A000B1AA8B /* Campaigns.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48B49F29205C74A000B1AA8B /* Base */,
+			);
+			name = Campaigns.storyboard;
+			sourceTree = "<group>";
+		};
+		48B49F2B205C74F500B1AA8B /* AddCampaign.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48B49F2C205C74F500B1AA8B /* Base */,
+			);
+			name = AddCampaign.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
