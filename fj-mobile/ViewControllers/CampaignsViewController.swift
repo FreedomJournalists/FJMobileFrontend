@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CampaignsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+class CampaignsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 //        Only for testing
     var model: [[UIColor]]!
@@ -42,7 +42,22 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
         tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
     }
     
-//        Set up collection views
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 168
+    }
+    
+//        Only for testing
+    func generateRandomData() -> [[UIColor]] {
+        let numberOfRows = 20
+        let numberOfItemsPerRow = 15
+        
+        return (0..<numberOfRows).map { _ in
+            return (0..<numberOfItemsPerRow).map { _ in UIColor.randomColor() }
+        }
+    }
+}
+
+extension CampaignsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model[collectionView.tag].count
@@ -56,26 +71,17 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         return cell
     }
+}
+
+extension UIColor {
     
-//        Only for testing
-    func generateRandomData() -> [[UIColor]] {
-        let numberOfRows = 20
-        let numberOfItemsPerRow = 15
+    class func randomColor() -> UIColor {
         
-        return (0..<numberOfRows).map { _ in
-            return (0..<numberOfItemsPerRow).map { _ in randomColor() }
-        }
-    }
-    
-//        Only for testing
-    func randomColor() -> UIColor {
         let hue = CGFloat(arc4random() % 100) / 100
         let saturation = CGFloat(arc4random() % 100) / 100
         let brightness = CGFloat(arc4random() % 100) / 100
         
         return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1.0)
     }
-    
 }
-
 
