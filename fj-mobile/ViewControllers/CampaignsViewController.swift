@@ -1,0 +1,83 @@
+//
+//  CampaignsViewController.swift
+//  fj-mobile
+//
+//  Created by Tony Cioara on 3/17/18.
+//  Copyright © 2018 Tony Cioara. All rights reserved.
+//
+
+import SpriteKit
+
+class CampaignsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+//        Only for testing
+    var model: [[UIColor]]!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.model = generateRandomData()
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
+    
+//       Set up tableView
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "campaignsTVCell", for: indexPath) as! CampaignsTVCell
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
+        
+        guard let tableViewCell = cell as? CampaignsTVCell else { return }
+        
+        tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+    }
+    
+//        Set up collection views
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return model[collectionView.tag].count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "campaignCVCell", for: indexPath)
+        
+        cell.backgroundColor = model[collectionView.tag][indexPath.item]
+        
+        return cell
+    }
+    
+//        Only for testing
+    func generateRandomData() -> [[UIColor]] {
+        let numberOfRows = 20
+        let numberOfItemsPerRow = 15
+        
+        return (0..<numberOfRows).map { _ in
+            return (0..<numberOfItemsPerRow).map { _ in randomColor() }
+        }
+    }
+    
+//        Only for testing
+    func randomColor() -> UIColor {
+        
+        let hue = CGFloat(arc4random() % 100) / 100
+        let saturation = CGFloat(arc4random() % 100) / 100
+        let brightness = CGFloat(arc4random() % 100) / 100
+        
+        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1.0)
+    }
+    
+}
+
+
