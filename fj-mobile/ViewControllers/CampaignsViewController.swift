@@ -15,6 +15,8 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var tableView: UITableView!
     
+    var storedOffsets = [Int: CGFloat]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.model = generateRandomData()
@@ -40,6 +42,14 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
         guard let tableViewCell = cell as? CampaignsTVCell else { return }
         
         tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+        tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        guard let tableViewCell = cell as? CampaignsTVCell else { return }
+        
+        storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
