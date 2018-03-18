@@ -6,7 +6,7 @@
 //  Copyright © 2018 Tony Cioara. All rights reserved.
 //
 
-import SpriteKit
+import UIKit
 
 class LoginViewController: UIViewController {
     

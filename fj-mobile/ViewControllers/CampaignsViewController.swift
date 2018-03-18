@@ -6,7 +6,7 @@
 //  Copyright © 2018 Tony Cioara. All rights reserved.
 //
 
-import SpriteKit
+import UIKit
 
 class CampaignsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -19,24 +19,23 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         self.model = generateRandomData()
         
+//        self.tableView.register(CampaignCVCell.self, forCellReuseIdentifier: "campaignCVCell")
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
     
 //       Set up tableView
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "campaignsTVCell", for: indexPath) as! CampaignsTVCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "campaignsTVCell", for: indexPath)
         return cell
     }
     
-    func tableView(_ tableView: UITableView,
-                   willDisplay cell: UITableViewCell,
-                   forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return model.count
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         guard let tableViewCell = cell as? CampaignsTVCell else { return }
         
@@ -70,7 +69,6 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
     
 //        Only for testing
     func randomColor() -> UIColor {
-        
         let hue = CGFloat(arc4random() % 100) / 100
         let saturation = CGFloat(arc4random() % 100) / 100
         let brightness = CGFloat(arc4random() % 100) / 100

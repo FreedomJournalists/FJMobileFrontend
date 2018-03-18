@@ -6,7 +6,7 @@
 //  Copyright © 2018 Tony Cioara. All rights reserved.
 //
 
-import SpriteKit
+import UIKit
 
 class CampaignsTVCell: UITableViewCell {
     
@@ -15,7 +15,7 @@ class CampaignsTVCell: UITableViewCell {
     func setCollectionViewDataSourceDelegate
         <D: UICollectionViewDataSource & UICollectionViewDelegate>
         (dataSourceDelegate: D, forRow row: Int) {
-        
+
         collectionView.delegate = dataSourceDelegate
         collectionView.dataSource = dataSourceDelegate
         collectionView.tag = row
