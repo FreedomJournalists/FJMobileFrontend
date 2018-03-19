@@ -15,6 +15,11 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func addCampaignButton(_ sender: Any) {
+//        Segue to createCampaignVC
+        performSegue(withIdentifier: "createCampaignSegue", sender: sender)
+    }
+    
     var storedOffsets = [Int: CGFloat]()
     
     override func viewDidLoad() {
@@ -53,7 +58,7 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 168
+        return 301
     }
     
 //        Only for testing
