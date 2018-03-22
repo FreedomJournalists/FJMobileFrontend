@@ -24,6 +24,7 @@
 		EC925BC9205EF4D50083237B /* UserResource.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC925BC7205EF4D50083237B /* UserResource.xcdatamodeld */; };
 		ECEA1702205F3853007717EF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA1701205F3853007717EF /* SignUpViewController.swift */; };
 		ECEA1704205F62C0007717EF /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA1703205F62C0007717EF /* UserDetailsViewController.swift */; };
+		ECEA1706206077CE007717EF /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA1705206077CE007717EF /* ProgressBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		EC925BC8205EF4D50083237B /* UserResource.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserResource.xcdatamodel; sourceTree = "<group>"; };
 		ECEA1701205F3853007717EF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		ECEA1703205F62C0007717EF /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		ECEA1705206077CE007717EF /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				ECEA1703205F62C0007717EF /* UserDetailsViewController.swift */,
 				EC925BC7205EF4D50083237B /* UserResource.xcdatamodeld */,
 				EC22E886205F158A009887A8 /* CoreDataStack.swift */,
+				ECEA1705206077CE007717EF /* ProgressBar.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				4809ED6E205DE9EA00583127 /* LoginViewController.swift in Sources */,
 				486BA06C205DDB0000FAC959 /* CampaignCVCell.swift in Sources */,
 				EC22E887205F158A009887A8 /* CoreDataStack.swift in Sources */,
+				ECEA1706206077CE007717EF /* ProgressBar.swift in Sources */,
 				ECEA1704205F62C0007717EF /* UserDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,10 +9,21 @@
 import Foundation
 import CoreData
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//CoreData, since we don't want it to be changed in any way we stablish it has public, everyone can take it
+//but no one can change it
+//is private to not let it change
 public final class CoreDataStack {
+    
+    //Unchanging constant that is shared between all objects of a class
+    //Is static to protect the capacity to make it constant through the whole program but still global
     static let instance = CoreDataStack()
     
+    //Why is this like this??
     private init() {}
+    
     
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(

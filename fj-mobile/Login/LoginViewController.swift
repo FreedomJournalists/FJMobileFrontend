@@ -11,14 +11,24 @@ import CoreData
 
 class LoginViewController: UIViewController {
     
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    //Two buttons to verify user and password
+    
+    //user verification field
     @IBOutlet var nameTextCheck: UITextField!
+    //password verification field
     @IBOutlet var passwordTextCheck: UITextField!
+    
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    //
     @IBAction func signUpButtonAction(_ sender: Any) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         let searchString = self.nameTextCheck.text
