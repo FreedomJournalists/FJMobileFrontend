@@ -12,6 +12,16 @@ class CampaignsTVCell: UITableViewCell {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
+    var collectionViewOffset: CGFloat {
+        get {
+            return collectionView.contentOffset.x
+        }
+        
+        set {
+            collectionView.contentOffset.x = newValue
+        }
+    }
+    
     func setCollectionViewDataSourceDelegate
         <D: UICollectionViewDataSource & UICollectionViewDelegate>
         (dataSourceDelegate: D, forRow row: Int) {
