@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		4809ED6E205DE9EA00583127 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809ED6D205DE9EA00583127 /* LoginViewController.swift */; };
 		480D4F3F20606C8200AFCE13 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D4F3E20606C8200AFCE13 /* Networking.swift */; };
+		480D4F412060724400AFCE13 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D4F402060724400AFCE13 /* Routes.swift */; };
 		486BA068205DD3D900FAC959 /* CampaignsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BA067205DD3D900FAC959 /* CampaignsViewController.swift */; };
 		486BA06A205DD65A00FAC959 /* CampaignsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BA069205DD65A00FAC959 /* CampaignsTVCell.swift */; };
 		486BA06C205DDB0000FAC959 /* CampaignCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BA06B205DDB0000FAC959 /* CampaignCVCell.swift */; };
+		4871DE27206420F10048678C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4871DE26206420F10048678C /* User.swift */; };
 		4891673D20603D2B00F94744 /* CreateCampaignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4891673C20603D2B00F94744 /* CreateCampaignViewController.swift */; };
 		48B49EF9205C744400B1AA8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B49EF8205C744400B1AA8B /* AppDelegate.swift */; };
 		48B49EFE205C744400B1AA8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48B49EFC205C744400B1AA8B /* Main.storyboard */; };
@@ -45,9 +47,11 @@
 		4809ED6D205DE9EA00583127 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		480D4F3D2060625400AFCE13 /* fj-mobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "fj-mobile.entitlements"; sourceTree = "<group>"; };
 		480D4F3E20606C8200AFCE13 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		480D4F402060724400AFCE13 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		486BA067205DD3D900FAC959 /* CampaignsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignsViewController.swift; sourceTree = "<group>"; };
 		486BA069205DD65A00FAC959 /* CampaignsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignsTVCell.swift; sourceTree = "<group>"; };
 		486BA06B205DDB0000FAC959 /* CampaignCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignCVCell.swift; sourceTree = "<group>"; };
+		4871DE26206420F10048678C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4891673C20603D2B00F94744 /* CreateCampaignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignViewController.swift; sourceTree = "<group>"; };
 		48B49EF5205C744400B1AA8B /* fj-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fj-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B49EF8205C744400B1AA8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,10 +104,19 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		4871DE25206420D70048678C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4871DE26206420F10048678C /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		4891673B205F32F800F94744 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				480D4F3E20606C8200AFCE13 /* Networking.swift */,
+				480D4F402060724400AFCE13 /* Routes.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -133,6 +146,7 @@
 			children = (
 				480D4F3D2060625400AFCE13 /* fj-mobile.entitlements */,
 				48B49EF8205C744400B1AA8B /* AppDelegate.swift */,
+				4871DE25206420D70048678C /* Models */,
 				4891673B205F32F800F94744 /* Networking */,
 				486BA064205DD10900FAC959 /* Cells */,
 				48B49F27205C746500B1AA8B /* ViewControllers */,
@@ -326,9 +340,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				486BA068205DD3D900FAC959 /* CampaignsViewController.swift in Sources */,
+				480D4F412060724400AFCE13 /* Routes.swift in Sources */,
 				486BA06A205DD65A00FAC959 /* CampaignsTVCell.swift in Sources */,
 				4891673D20603D2B00F94744 /* CreateCampaignViewController.swift in Sources */,
 				48B49EF9205C744400B1AA8B /* AppDelegate.swift in Sources */,
+				4871DE27206420F10048678C /* User.swift in Sources */,
 				4809ED6E205DE9EA00583127 /* LoginViewController.swift in Sources */,
 				486BA06C205DDB0000FAC959 /* CampaignCVCell.swift in Sources */,
 				480D4F3F20606C8200AFCE13 /* Networking.swift in Sources */,
