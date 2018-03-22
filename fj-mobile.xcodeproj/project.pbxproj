@@ -24,6 +24,11 @@
 		48B49F2A205C74A000B1AA8B /* Campaigns.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48B49F28205C74A000B1AA8B /* Campaigns.storyboard */; };
 		48B49F2D205C74F500B1AA8B /* CreateCampaign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48B49F2B205C74F500B1AA8B /* CreateCampaign.storyboard */; };
 		48B49F2F205C752900B1AA8B /* ViewCampaignVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48B49F2E205C752900B1AA8B /* ViewCampaignVC.storyboard */; };
+		EC22E887205F158A009887A8 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22E886205F158A009887A8 /* CoreDataStack.swift */; };
+		EC925BC9205EF4D50083237B /* UserResource.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC925BC7205EF4D50083237B /* UserResource.xcdatamodeld */; };
+		ECEA1702205F3853007717EF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA1701205F3853007717EF /* SignUpViewController.swift */; };
+		ECEA1704205F62C0007717EF /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA1703205F62C0007717EF /* UserDetailsViewController.swift */; };
+		ECEA1706206077CE007717EF /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA1705206077CE007717EF /* ProgressBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +73,11 @@
 		48B49F29205C74A000B1AA8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "fj-mobile/Storyboards/Base.lproj/Campaigns.storyboard"; sourceTree = "<group>"; };
 		48B49F2C205C74F500B1AA8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "fj-mobile/Storyboards/fj-mobile/Storyboards/Base.lproj/CreateCampaign.storyboard"; sourceTree = "<group>"; };
 		48B49F2E205C752900B1AA8B /* ViewCampaignVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewCampaignVC.storyboard; sourceTree = "<group>"; };
+		EC22E886205F158A009887A8 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		EC925BC8205EF4D50083237B /* UserResource.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserResource.xcdatamodel; sourceTree = "<group>"; };
+		ECEA1701205F3853007717EF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		ECEA1703205F62C0007717EF /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		ECEA1705206077CE007717EF /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +164,7 @@
 				48B49EFF205C744400B1AA8B /* Assets.xcassets */,
 				48B49F01205C744400B1AA8B /* LaunchScreen.storyboard */,
 				48B49F04205C744400B1AA8B /* Info.plist */,
+				EC925BC6205EF29A0083237B /* Login */,
 			);
 			path = "fj-mobile";
 			sourceTree = "<group>";
@@ -195,6 +206,19 @@
 				4891673C20603D2B00F94744 /* CreateCampaignViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EC925BC6205EF29A0083237B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4809ED6D205DE9EA00583127 /* LoginViewController.swift */,
+				ECEA1701205F3853007717EF /* SignUpViewController.swift */,
+				ECEA1703205F62C0007717EF /* UserDetailsViewController.swift */,
+				EC925BC7205EF4D50083237B /* UserResource.xcdatamodeld */,
+				EC22E886205F158A009887A8 /* CoreDataStack.swift */,
+				ECEA1705206077CE007717EF /* ProgressBar.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -663,6 +687,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EC925BC7205EF4D50083237B /* UserResource.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EC925BC8205EF4D50083237B /* UserResource.xcdatamodel */,
+			);
+			currentVersion = EC925BC8205EF4D50083237B /* UserResource.xcdatamodel */;
+			path = UserResource.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 48B49EED205C744400B1AA8B /* Project object */;
 }
