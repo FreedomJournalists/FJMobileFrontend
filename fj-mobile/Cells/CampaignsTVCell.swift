@@ -11,6 +11,7 @@ import UIKit
 class CampaignsTVCell: UITableViewCell {
     
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     var collectionViewOffset: CGFloat {
         get {
