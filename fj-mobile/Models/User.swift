@@ -15,6 +15,14 @@ class User: Codable {
     var firstName: String
     var lastName: String
     var password: String
+    
+//Getting
+    
+    //Make user defaults to hold information of particular user
+
+    //Make enum extension model
+    
+    
 //    Research if it needs a password or not
     
 //    static let sharedInstance = User()

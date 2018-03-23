@@ -27,7 +27,7 @@ public final class CoreDataStack {
     
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(
-            name: "shop_keep"
+            name: "journalist_revolution"
         )
         
         container.loadPersistentStores(completionHandler: {(storeDescription, error) in

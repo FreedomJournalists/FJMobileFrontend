@@ -9,59 +9,71 @@
 import Foundation
 import UIKit
 import CoreData
+import KeychainSwift
 
 class SignUpViewController: UIViewController {
     
     @IBOutlet var nameText: UITextField!
     
-    @IBOutlet var passwordText: UITextField!
+    //the two new values
+    @IBOutlet var firstNameText: UITextField!
+    @IBOutlet var lastNameText: UITextField!
+    
+    //
     @IBOutlet var nicknameText: UITextField!
+    
     @IBOutlet var emailText: UITextField!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    //On post request
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    @IBOutlet var passwordText: UITextField!
+
+    override func viewDidLoad() { super.viewDidLoad() }
+    override func didReceiveMemoryWarning() { super.didReceiveMemoryWarning() }
     
     @IBAction func SignUpAction(_ sender: Any) {
-        if isValidInput(Input: nameText.text!)
+        //First function about the nickname if it
+        if isValidInput(Input: nicknameText.text!)
         {
+            //Second function about the password if it is valid with all it's characteristics
             if isPasswordValid(passwordText.text!)
             {
+                //Third function about the email testing if it follows the structure of one
                 if isValidEmail(testStr: emailText.text!)
                 {
+                    //Related to the beggining of the app
                     let _:AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
+                    //This is where all the NSManagedObjects are saved
                     let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+                        //Setting the newUser as a NSManagedObject
                         let newUser = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as NSManagedObject
                     
-                    newUser.setValue(nameText.text, forKey: "name")
-                    newUser.setValue(passwordText.text, forKey: "password")
+                    //All the elements been saved on newUser
+                    newUser.setValue(firstNameText.text, forKey: "firstName")
+                    newUser.setValue(lastNameText.text, forKey: "lastName"  )
                     newUser.setValue(nicknameText.text, forKey: "nickname")
                     newUser.setValue(emailText.text, forKey: "email")
-                    
+                    newUser.setValue(passwordText.text, forKey: "password")
+                    //
                     do {
                         try context.save()
                     } catch {}
                     print(newUser)
                     print("Object Saved.")
                     
+                    /////////////////////////////////////////////////////////////////////////////////
+                    //
+                    //Must send the user through codable to the BackEnd HERE
                     let alertController1 = UIAlertController (title: "Valid", message: "Success", preferredStyle: UIAlertControllerStyle.alert)
                     alertController1.addAction(UIAlertAction(title: "Valid", style: .default, handler: nil))
                     
                     present(alertController1, animated:  true, completion: nil)
-                    
+            //UserDetails?? is this part working with the userdetaels???
                     let UserDetailsVc = self.storyboard?.instantiateInitialViewController(withIdentifier: "LogoutViewController") as! LogOutViewController
-                    ////////////// LogOutViewController must be made
+
                     self.navigationController?.pushViewController(UserDetailsVc, animated: true)
                 }
                 else
                 {
                     print("mail check")
+                    //Getting a UIAlertController
                     let alertController1 = UIAlertController (title: "Fill Email ID", message: "Enter valid email", preferredStyle: UIAlertControllerStyle.alert)
                 
                     alertController1.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
