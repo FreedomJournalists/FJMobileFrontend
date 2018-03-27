@@ -13,7 +13,7 @@ enum Route {
     case postCampaign(title: String, description: String, goal: String)
     case getAllCampaigns
     case login(email: String, password: String)
-    case signUp(email: String, firstName: String, lastName: String, nickname: String, password: String)
+    case signUp(email: String, firstName: String, lastName: String, nickname: String, password: String/*, imageUrl: URL*/)
     
     func method() -> String {
         switch self {
@@ -43,10 +43,12 @@ enum Route {
     
     func body() -> Data? {
         switch self {
-//        case signUp:
-//            let user = User(first_name: firstName, last_name: lastName, email: email, nickname: nickname, password: password)
-//            let encoder = JSONEncoder()
-//            let result = try? encoder.encode(user)
+        case let .signUp(email, firstName, lastName, nickname, password/*, imageUrl*/):
+            let user = User(nickname: nickname, email: email, firstName: firstName, lastName: lastName, password: password/*, imageUrl: imageUrl*/)
+            let encoder = JSONEncoder()
+            let result = try? encoder.encode(user)
+            
+            return result!
 
         default:
             return nil
