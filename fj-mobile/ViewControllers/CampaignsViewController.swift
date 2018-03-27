@@ -28,6 +28,7 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
         
 //        self.tableView.register(CampaignCVCell.self, forCellReuseIdentifier: "campaignCVCell")
         
+        self.tableView.allowsSelection = false
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
@@ -92,6 +93,10 @@ extension CampaignsViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.backgroundColor = model[collectionView.tag][indexPath.item]
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("clicked")
     }
 }
 

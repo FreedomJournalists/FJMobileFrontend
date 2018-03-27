@@ -10,4 +10,5 @@ import UIKit
 
 class CampaignCVCell: UICollectionViewCell {
     
+    
 }
