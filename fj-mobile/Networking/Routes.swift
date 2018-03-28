@@ -15,6 +15,14 @@ enum Route {
     case login(email: String, password: String)
     case signUp(email: String, firstName: String, lastName: String, nickname: String, password: String)
     
+    func queryParameters() -> [String : String] {
+        switch self {
+        case .login(email, password):
+            return ["email": email, "password": password]
+        default:
+            [:]
+        }
+    }
     func method() -> String {
         switch self {
         case .getAllCampaigns:
@@ -43,15 +51,23 @@ enum Route {
     
     func body() -> Data? {
         switch self {
-//        case signUp:
-//            let user = User(first_name: firstName, last_name: lastName, email: email, nickname: nickname, password: password)
-//            let encoder = JSONEncoder()
-//            let result = try? encoder.encode(user)
-
+        case let .signUp(email, firstName, lastName, nickname, password):
+            let encoder = JSONEncoder()
+            let body: [String: String] = ["email": email, "first_name": firstName, "last_name": lastName, "nickname": nickname, "password": password]
+            let result = try? encoder.encode(body)
+            return result!
+            
         default:
             return nil
         }
     }
     
-//    Finish body and add func headers
+    func headers() -> [String: String] {
+        switch self {
+        case .login, .signUp:
+            return ["Content-Type": "application/json"]
+        default:
+            return ["Content-Type": "application/json", "Authorization":"Bearer 32f1dcdd06a598cc5d183cca179dc5be"]
+        }
+    }
 }
