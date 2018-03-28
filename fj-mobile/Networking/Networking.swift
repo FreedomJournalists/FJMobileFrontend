@@ -14,18 +14,20 @@ class Network {
     let baseURL = "https://freedom-journalism.herokuapp.com/"
     let session = URLSession.shared
     
-    func fetch(route: Route, completion: @escaping (Data) -> Void) {
+    func fetch(route: Route, completion: @escaping (Data, HTTPURLResponse) -> Void) {
         let fullPath = baseURL + route.path()
         let pathURL = URL(string: fullPath)
         var request = URLRequest(url: pathURL!)
         
         request.httpMethod = route.method()
+        request.allHTTPHeaderFields = route.headers()
+        request.httpBody = route.body()
         
         session.dataTask(with: request) { (data, resp, err) in
-            //                print(String(describing: data) + String(describing: resp) + String(describing: err))
-            //                print(String(describing: resp))
-            if let data = data {
-                completion(data)
+            print("DATA:" + String(describing: data) + "RESP:" + String(describing: resp) + "ERR:" + String(describing: err))
+            if let data = data, let resp = resp {
+                completion(data, resp as! HTTPURLResponse)
+                
             }
             
             }.resume()

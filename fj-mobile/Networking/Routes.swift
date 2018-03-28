@@ -13,7 +13,7 @@ enum Route {
     case postCampaign(title: String, description: String, goal: String)
     case getAllCampaigns
     case login(email: String, password: String)
-    case signUp(email: String, firstName: String, lastName: String, nickname: String, password: String, imageUrlString: String)
+    case signUp(email: String, firstName: String, lastName: String, nickname: String, password: String)
     
     func method() -> String {
         switch self {
@@ -43,13 +43,12 @@ enum Route {
     
     func body() -> Data? {
         switch self {
-        case let .signUp(email, firstName, lastName, nickname, password, imageUrlString):
-            let user = User(nickname: nickname, email: email, firstName: firstName, lastName: lastName, password: password, imageUrlString: imageUrlString)
+        case let .signUp(email, firstName, lastName, nickname, password):
             let encoder = JSONEncoder()
-            let result = try? encoder.encode(user)
-        
-        return result!
-        
+            let body: [String: String] = ["email": email, "first_name": firstName, "last_name": lastName, "nickname": nickname, "password": password]
+            let result = try? encoder.encode(body)
+            return result!
+            
         default:
             return nil
         }
@@ -60,7 +59,7 @@ enum Route {
         case .login, .signUp:
             return ["Content-Type": "application/json"]
         default:
-            return ["Content-Type": "application/json", "Authorization":"Bearer 314a65b195e62a34f35df589fe4caa9f"]
+            return ["Content-Type": "application/json", "Authorization":"Bearer 32f1dcdd06a598cc5d183cca179dc5be"]
         }
     }
 }

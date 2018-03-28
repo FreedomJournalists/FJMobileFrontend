@@ -74,24 +74,18 @@
                                                                     </imageView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHT-PE-zo3" userLabel="darkView">
                                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="220"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAI-6n-e3p">
-                                                                                <rect key="frame" x="8" y="8" width="134" height="55"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="height" constant="55" id="4C4-3c-azJ"/>
-                                                                                    <constraint firstAttribute="width" constant="134" id="eJW-OY-Cd2"/>
-                                                                                </constraints>
-                                                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
                                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.1015074823943662" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                        <constraints>
-                                                                            <constraint firstItem="cAI-6n-e3p" firstAttribute="top" secondItem="FHT-PE-zo3" secondAttribute="topMargin" id="BQU-37-tIf"/>
-                                                                            <constraint firstItem="cAI-6n-e3p" firstAttribute="leading" secondItem="FHT-PE-zo3" secondAttribute="leadingMargin" id="DQv-ME-A8m"/>
-                                                                        </constraints>
                                                                     </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAI-6n-e3p">
+                                                                        <rect key="frame" x="8" y="18" width="134" height="27"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="27" id="4C4-3c-azJ"/>
+                                                                            <constraint firstAttribute="width" constant="134" id="eJW-OY-Cd2"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
                                                                 </subviews>
                                                             </view>
                                                             <constraints>
@@ -99,7 +93,9 @@
                                                                 <constraint firstItem="NzJ-V3-FW1" firstAttribute="trailing" secondItem="FHT-PE-zo3" secondAttribute="trailing" id="85n-Ew-kSo"/>
                                                                 <constraint firstItem="NzJ-V3-FW1" firstAttribute="leading" secondItem="FHT-PE-zo3" secondAttribute="leading" id="EE9-67-eDn"/>
                                                                 <constraint firstAttribute="bottom" secondItem="FHT-PE-zo3" secondAttribute="bottom" id="Ebg-Kv-oKG"/>
+                                                                <constraint firstItem="cAI-6n-e3p" firstAttribute="top" secondItem="mja-Rv-NsY" secondAttribute="topMargin" constant="10" id="VPD-Rk-xbz"/>
                                                                 <constraint firstItem="NzJ-V3-FW1" firstAttribute="top" secondItem="FHT-PE-zo3" secondAttribute="top" id="X3N-9L-h48"/>
+                                                                <constraint firstItem="cAI-6n-e3p" firstAttribute="centerX" secondItem="NzJ-V3-FW1" secondAttribute="centerX" id="aO8-rN-3j1"/>
                                                                 <constraint firstItem="FHT-PE-zo3" firstAttribute="leading" secondItem="mja-Rv-NsY" secondAttribute="leading" id="chH-Qa-K3Y"/>
                                                                 <constraint firstItem="FHT-PE-zo3" firstAttribute="top" secondItem="mja-Rv-NsY" secondAttribute="top" id="nHu-8o-MYc"/>
                                                                 <constraint firstItem="NzJ-V3-FW1" firstAttribute="bottom" secondItem="FHT-PE-zo3" secondAttribute="bottom" id="qfY-p2-x1F"/>

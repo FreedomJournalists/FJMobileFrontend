@@ -10,34 +10,22 @@ import Foundation
 
 class Campaign: Codable {
     
+    var id: Int
     var title: String
     var description: String
-    var moneyRaised: Float
+    var money_raised: Float
     var goal: Int
-    var imageUrlString: String
+    var image_file_url: String
     
-    static let sharedInstance = Campaign()
     
-    static func sharedInstanceWith(title: String, description: String, moneyRaised: Float, goal: Int) -> Campaign {
-        
-        let instance = Campaign.sharedInstance
-        instance.title = title
-        instance.description = description
-        instance.moneyRaised = moneyRaised
-        instance.goal = goal
-        return instance
-    }
     
-    init(title: String, description: String, moneyRaised: Float, goal: Int, imageUrlString: String) {
+    init(title: String, description: String, moneyRaised: Float, goal: Int, imageUrlString: String, id: Int) {
         self.title = title
         self.description = description
-        self.moneyRaised = moneyRaised
+        self.money_raised = moneyRaised
         self.goal = goal
-        self.imageUrlString = imageUrlString
+        self.image_file_url = imageUrlString
+        self.id = id
     }
     
-    
-    convenience init() {
-        self.init(title: "", description: "", moneyRaised: 0.0, goal: 0, imageUrlString: "")
-    }
 }

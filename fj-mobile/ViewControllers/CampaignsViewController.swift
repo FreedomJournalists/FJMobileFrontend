@@ -12,7 +12,7 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
     
 //        Only for testing
     var model: [[UIColor]]!
-    var campaigns: [Campaign]?
+    var campaigns: [Campaign] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,7 +26,11 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         self.model = generateRandomData()
-        self.loadCampaigns()
+        self.loadCampaigns {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
         
         self.tableView.allowsSelection = false
         self.tableView.delegate = self
@@ -47,7 +51,8 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.count
+//        return model.count
+        return 2
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -78,13 +83,20 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
             return (0..<numberOfItemsPerRow).map { _ in UIColor.randomColor() }
         }
     }
-    
-    func loadCampaigns() {
-        Network.instance.fetch(route: .getAllCampaigns) { (data) in
+}
+
+
+extension CampaignsViewController {
+    func loadCampaigns(completion: @escaping ()->()) {
+        Network.instance.fetch(route: .getAllCampaigns) { (data, resp) in
             let jsonCampaigns = try? JSONDecoder().decode([Campaign].self, from: data)
-            print(jsonCampaigns)
             if let campaigns = jsonCampaigns {
                 self.campaigns = campaigns
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                completion()
             }
         }
     }
@@ -93,14 +105,22 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
 extension CampaignsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model[collectionView.tag].count
+//        return model[collectionView.tag].count
+        return (campaigns.count) - 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "campaignCVCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "campaignCVCell", for: indexPath) as! CampaignCVCell
         
 //        cell.backgroundColor = model[collectionView.tag][indexPath.item]
+        
+        cell.titleLabel.text = self.campaigns[indexPath.row + 1].title
+        cell.titleLabel.sizeToFit()
+        
+        let imageUrl = self.campaigns[indexPath.row].image_file_url
+        
+        cell.imageView.loadImageFromUrlString(urlString: imageUrl)
         
         return cell
     }
