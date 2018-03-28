@@ -15,6 +15,14 @@ enum Route {
     case login(email: String, password: String)
     case signUp(email: String, firstName: String, lastName: String, nickname: String, password: String)
     
+    func queryParameters() -> [String : String] {
+        switch self {
+        case .login(email, password):
+            return ["email": email, "password": password]
+        default:
+            [:]
+        }
+    }
     func method() -> String {
         switch self {
         case .getAllCampaigns:
