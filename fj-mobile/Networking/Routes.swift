@@ -59,7 +59,7 @@ enum Route {
     case createUser(email: String, firstName: String, lastName: String, nickname: String, password: String)
     //DELETE
     case logoutUser
-    case deleteUser
+    case deleteUser(user_id: Int)
     
     ////////////////////////////////////////////////
     //Routes Campaign Related
@@ -102,38 +102,77 @@ enum Route {
     case .getUserCampaigns, .getAllCampaigns, .getCampaign, .getCampaignPledges:
             return "campaign"
         case .loginUser:
-            return "get token"
+            return "get_token"
         case .createUser:
-            return "new user"
+            return "new_user"
         case .postCampaign:
-            return "new campaign"
+            return "new_campaign"
         case .postPledge:
-            return "new pledge"
+            return "new_pledge"
         case .deleteUser:
-            return ""
+            return "deleted_user"
         case .deleteCampaign:
-            return ""
+            return "deleted_campaign"
         case .deletePledge:
-            return ""
+            return "deleted_pledge"
         }
     }
     
     func body() -> Data? {
         switch self {
-        case let .createUser(email, firstName, lastName, nickname, password):
-            let user = User(email: email, firstName: firstName, lastName: lastName, nickname: nickname, password: password)
+        case let .loginUser(email,password):
             let encoder = JSONEncoder()
-            let result = try? encoder.encode(user)
-            
-            return result!
-            
-        case let .createUser(firstName, lastName, email, password, confirmation, username):
-            let encoder = JSONEncoder()
-            let body: [String: String] = ["first_name": firstName, "last_name": lastName, "email": email, "password": password, "confirmation": confirmation, "username": username]
+            let body: [String: String] = ["email": email, "password": password]
             let result = try? encoder.encode(body)
             return result!
+            
+        case let .createUser(email, first_name, last_name, nickname, password):
+            let encoder = JSONEncoder()
+            let body: [String: String] = ["email": email, "first_name": first_name, "last_name": last_name, "nickname": nickname, "password": password]
+            let result = try? encoder.encode(body)
+            return result!
+            
+        case let .deleteUser(_:user_id):
+            let body: [String: Int] = ["user_id": user_id]
+            let result = try? JSONSerialization.data(withJSONObject: body, options: [])
+            return result!
+            
         default:
             return nil
+        }
+    }
+    
+    func Parameters() -> [String: String] {
+        switch self {
+        case let .getUser(nickname):
+            return ["nickname": nickname]
+        case .getUserCampaigns:
+            <#code#>
+        case .getUserPledges:
+            <#code#>
+        case .getAllCampaigns:
+            <#code#>
+        case .getCampaign:
+            <#code#>
+        case .getCampaignPledges:
+            <#code#>
+
+        default:
+            return [:]
+        }
+    }
+    
+    func headers() -> [String: String] {
+        switch self {
+        case .loginUser, .createUser:
+            return ["Content-Type": "application/json"]
+        default:
+            let keychain = KeychainSwift()
+            let token = keychain.get("token")
+            let email = keychain.get("email")
+            return ["Content-Type": "application/json",
+                    "x-User-Token": "\(token!)",
+                    "x-User-Email": email!]
         }
     }
 }
