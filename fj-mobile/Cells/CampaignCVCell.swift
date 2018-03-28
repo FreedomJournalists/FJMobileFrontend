@@ -10,5 +10,7 @@ import UIKit
 
 class CampaignCVCell: UICollectionViewCell {
     
+    @IBOutlet weak var imageView: CustomImageView!
+    @IBOutlet weak var titleLabel: UILabel!
     
 }

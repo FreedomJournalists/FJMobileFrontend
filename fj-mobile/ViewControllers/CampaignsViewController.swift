@@ -12,6 +12,7 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
     
 //        Only for testing
     var model: [[UIColor]]!
+    var campaigns: [Campaign]?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,8 +26,7 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         self.model = generateRandomData()
-        
-//        self.tableView.register(CampaignCVCell.self, forCellReuseIdentifier: "campaignCVCell")
+        self.loadCampaigns()
         
         self.tableView.allowsSelection = false
         self.tableView.delegate = self
@@ -78,6 +78,16 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
             return (0..<numberOfItemsPerRow).map { _ in UIColor.randomColor() }
         }
     }
+    
+    func loadCampaigns() {
+        Network.instance.fetch(route: .getAllCampaigns) { (data) in
+            let jsonCampaigns = try? JSONDecoder().decode([Campaign].self, from: data)
+            print(jsonCampaigns)
+            if let campaigns = jsonCampaigns {
+                self.campaigns = campaigns
+            }
+        }
+    }
 }
 
 extension CampaignsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -90,7 +100,7 @@ extension CampaignsViewController: UICollectionViewDelegate, UICollectionViewDat
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "campaignCVCell", for: indexPath)
         
-        cell.backgroundColor = model[collectionView.tag][indexPath.item]
+//        cell.backgroundColor = model[collectionView.tag][indexPath.item]
         
         return cell
     }

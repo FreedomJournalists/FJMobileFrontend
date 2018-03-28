@@ -14,6 +14,7 @@ class Campaign: Codable {
     var description: String
     var moneyRaised: Float
     var goal: Int
+    var imageUrlString: String
     
     static let sharedInstance = Campaign()
     
@@ -27,15 +28,16 @@ class Campaign: Codable {
         return instance
     }
     
-    init(title: String, description: String, moneyRaised: Float, goal: Int) {
+    init(title: String, description: String, moneyRaised: Float, goal: Int, imageUrlString: String) {
         self.title = title
         self.description = description
         self.moneyRaised = moneyRaised
         self.goal = goal
+        self.imageUrlString = imageUrlString
     }
     
     
     convenience init() {
-        self.init(title: "", description: "", moneyRaised: 0.0, goal: 0)
+        self.init(title: "", description: "", moneyRaised: 0.0, goal: 0, imageUrlString: "")
     }
 }
