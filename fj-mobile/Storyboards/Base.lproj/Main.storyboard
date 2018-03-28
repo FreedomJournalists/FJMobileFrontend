@@ -93,11 +93,12 @@
                         <outlet property="lastNameTextField" destination="CgW-Ng-VtK" id="hKi-0l-pDg"/>
                         <outlet property="nicknameTextField" destination="lwe-yC-P8E" id="Uuz-pY-zGB"/>
                         <outlet property="passwordTextField" destination="UyS-hL-w9X" id="3ia-Nl-qp1"/>
+                        <segue destination="YO0-6o-XM1" kind="show" identifier="toCampaigns" id="219-ug-aUo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jTc-Qx-OS0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-630" y="103"/>
+            <point key="canvasLocation" x="233" y="-632"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="n6D-qk-HIb">
@@ -170,10 +171,13 @@
         <!--Campaigns-->
         <scene sceneID="w84-yp-k4m">
             <objects>
-                <viewControllerPlaceholder storyboardName="Campaigns" id="YO0-6o-XM1" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="CampaignsId" storyboardName="Campaigns" id="YO0-6o-XM1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JeI-Xk-2kB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1025" y="82"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="219-ug-aUo"/>
+    </inferredMetricsTieBreakers>
 </document>

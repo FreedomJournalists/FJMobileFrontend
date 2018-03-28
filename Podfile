@@ -6,5 +6,6 @@ target 'fj-mobile' do
     use_frameworks!
     pod 'KeychainSwift', '~> 10.0'
     pod 'IQKeyboardManagerSwift', '~> 5.0.0'
+    pod 'Alamofire', '~> 4.7'
 
 end

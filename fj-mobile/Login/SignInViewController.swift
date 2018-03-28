@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class SignInViewController: UIViewController {
     
@@ -36,16 +37,46 @@ class SignInViewController: UIViewController {
         ///////////////////////////////////////////////////////
         //The spinning waiting for the network call to work
         let myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
-        
         myActivityIndicator.center = view.center
-        
         myActivityIndicator.hidesWhenStopped = false
-        
         myActivityIndicator.startAnimating()
-        
         view.addSubview(myActivityIndicator)
         
-    }
+        let email = self.userNameTextField.text
+        let password = self.userPasswordTextField.text
+        
+        let keychain = KeychainSwift()
+        
+        //param
+        
+        Network.instance.fetch(route: .login(email: email!, password: password!)) { (data, resp) in
+            let jsonUser = try? JSONDecoder().decode(User.self, from: data)
+            if let user = jsonUser {
+                print("Login successful")
+                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                UserDefaults.standard.synchronize()
+
+                keychain.set(user.token, forKey: "token")
+                print(user.token)
+                
+            }
+        }
+                
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "CampaignsId", sender: self)
+            self.removeActivityIndicator(activityIndicator: myActivityIndicator)
+            
+        }
+
+        DispatchQueue.main.async {
+            self.removeActivityIndicator(activityIndicator: myActivityIndicator)
+            self.displayMessage(userMessage: "Username or password incorrect")
+        }
+
+}
+
+        
+
     
     
     @IBAction func registerNewAccountButton(_ sender: Any) {

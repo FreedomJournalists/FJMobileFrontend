@@ -17,9 +17,8 @@ class RegisterUserViewController: UIViewController {
     @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
-    let keychain = KeychainSwift()
 
+    var user: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,26 +35,27 @@ class RegisterUserViewController: UIViewController {
     @IBAction func signupButtonTapped(_ sender: Any) {
         print("SignUp button tapped")
         
-        
-        ///////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////
         //The spinning wheel that appears after saving the user
-        //        let myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
-        //
-        //        myActivityIndicator.center = view.center
-        //
-        //        myActivityIndicator.hidesWhenStopped = false
-        //
-        //        myActivityIndicator.startAnimating()
-        //
-        //        view.addSubview(myActivityIndicator)
+        let myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+        myActivityIndicator.center = view.center
+        myActivityIndicator.hidesWhenStopped = false
+        myActivityIndicator.startAnimating()
+        view.addSubview(myActivityIndicator)
         
-
-        //                self.removeActivityIndicator(activityIndicator: myActivityIndicator)
-        //                print(error)
-        //                self.displayMessage(userMessage: "Could not succesfully perform this request. Please try again later")
-
+        let keychain = KeychainSwift()
         
+        createUser {
+            DispatchQueue.main.async {
+                keychain.set(self.user!.token, forKey: "token")
+                
+                self.performSegue(withIdentifier: "toCampaigns", sender: self)
+            }
+        }
+
     }
+        
+    
     @IBAction func cancelButtonTapped(_ sender: Any) {
         print("Cancel button tapped")
         
@@ -93,11 +93,13 @@ class RegisterUserViewController: UIViewController {
     }
 }
 
+
 extension RegisterUserViewController {
+    
     func createUser(completion: @escaping () -> ()) {
         guard let firstName = self.firstNameTextField.text, !firstName.isEmpty, let lastName = self.lastNameTextField.text, !lastName.isEmpty,
             let email = self.emailTextField.text, !email.isEmpty, let nickname = self.nicknameTextField.text, !nickname.isEmpty, let password = self.passwordTextField.text,
-            !password.isEmpty, let confirmPassword = confirmPasswordTextField.text, !confirmPassword.isEmpty else {
+            !password.isEmpty else {
                 DispatchQueue.main.async {
                     self.displayMessage(userMessage: "Invalid Inputs.")
                 }
@@ -108,31 +110,15 @@ extension RegisterUserViewController {
             self.displayMessage(userMessage: "Password must be at least 6 characters.")
         }
         
-        Network.instance.fetch(route: .createUser(firstName: firstName, lastName: lastName, email: email, nickname: nickname, password: password, confirmPassword: confirmPassword)) { (data, resp) in
+        Network.instance.fetch(route: .signUp(email: email, firstName: firstName, lastName: lastName, nickname: nickname, password: password)) { (data, resp) in
             
-            if resp.statusCode == 403 {
-                DispatchQueue.main.async {
-                    self.displayMessage(userMessage: "Username or Email in Use.")
-                
-                    return
-                }
-            }
-                self.getUser(username: username) {
-                    completion()
-                }
-            
-        }
-    }
-
-
-extension RegisterUserViewController {
-    func getUser(username: String, completion: @escaping()->()) {
-        Network.instance.fetch(route: .getUser(username: username)) { (data, resp)  in
             let jsonUser = try? JSONDecoder().decode(User.self, from: data)
-            if let loggedUser = jsonUser {
-                self.user = loggedUser
+            if let user = jsonUser {
+                self.user = user
                 
+                print(user.token)
                 completion()
+             
             }
         }
     }

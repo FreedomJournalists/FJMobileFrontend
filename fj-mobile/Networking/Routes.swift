@@ -7,134 +7,54 @@
 //
 
 import Foundation
-import KeychainSwift
-
-enum imageUploadRoute {
-    case userUpload
-    case groupUpload
-    
-    func fileName()-> String {
-        let keychain = KeychainSwift()
-        switch self {
-        case .userUpload:
-            let userID = keychain.get("id")
-            return "User\(String(describing: userID!))Profile"
-        case .groupUpload:
-            let groupID = keychain.get("groupID")
-            return "Group\(String(describing: groupID!))Profile"
-        }
-    }
-    
-    func Path()-> String {
-        let keychain = KeychainSwift()
-        switch self {
-        case .userUpload:
-            return "sessions"
-        case .groupUpload:
-            let groupID = keychain.get("groupID")
-            return "groups/\(groupID!)"
-        }
-    }
-    
-    func Headers()-> [String: String] {
-        let keychain = KeychainSwift()
-        let token = keychain.get("token")
-        let email = keychain.get("email")
-        return ["x-User-Token": "\(token!)",
-            "x-User-Email": email!]
-    }
-    
-}
 
 enum Route {
     
-    ///////////////////////////////////////////////
-    //Routes User Related
-    //GET
-    case getUser(username: String)
-    case getUserCampaigns
-    case getUserPledges
-    //POST
-    case loginUser(email: String, password: String)
-    case createUser(email: String, firstName: String, lastName: String, nickname: String, password: String)
-    //DELETE
-    case logoutUser
-    case deleteUser(user_id: Int)
-    
-    ////////////////////////////////////////////////
-    //Routes Campaign Related
-    //GET
-    //campaigns
-    case getAllCampaigns
-    case getCampaign
-    //user/campaigns
-    case getCampaignPledges
-    //POST
     case postCampaign(title: String, description: String, goal: String)
-    //UPDATE
-    //There should be one for when you create a user
-    //DELETE
-    case deleteCampaign
+    case getAllCampaigns
+    case login(email: String, password: String)
+    case signUp(email: String, firstName: String, lastName: String, nickname: String, password: String)
     
-    ////////////////////////////////////////////////
-    //Routes Pledges Related
-    //GET
-    //POST
-    case postPledge
-    //DELETE
-    case deletePledge
-    
+    func queryParameters() -> [String : String] {
+        switch self {
+        case .login(email, password):
+            return ["email": email, "password": password]
+        default:
+            [:]
+        }
+    }
     func method() -> String {
         switch self {
-    case .getUser, .getUserCampaigns, .getAllCampaigns, .getCampaign, .getCampaignPledges, .getUserPledges:
+        case .getAllCampaigns:
             return "GET"
-        case .loginUser, .createUser, .postCampaign, .postPledge:
+        case .postCampaign:
             return "POST"
-        case .logoutUser, .deleteUser, .deleteCampaign, .deletePledge:
-            return "DELETE"
+        case .login:
+            return "GET"
+        case .signUp:
+            return "POST"
         }
     }
     
     func path() -> String {
         switch self {
-        case .getUser, .logoutUser, .getUserPledges:
-            return "session"
-    case .getUserCampaigns, .getAllCampaigns, .getCampaign, .getCampaignPledges:
-            return "campaign"
-        case .loginUser:
-            return "get_token"
-        case .createUser:
-            return "new_user"
+        case .getAllCampaigns:
+            return "campaigns"
         case .postCampaign:
-            return "new_campaign"
-        case .postPledge:
-            return "new_pledge"
-        case .deleteUser:
-            return "deleted_user"
-        case .deleteCampaign:
-            return "deleted_campaign"
-        case .deletePledge:
-            return "deleted_pledge"
+            return "campaigns"
+        case .login:
+            return "login"
+        case .signUp:
+            return "users"
         }
     }
     
     func body() -> Data? {
         switch self {
-        case let .loginUser(email,password):
+        case let .signUp(email, firstName, lastName, nickname, password):
             let encoder = JSONEncoder()
-            let body: [String: String] = ["email": email, "password": password]
+            let body: [String: String] = ["email": email, "first_name": firstName, "last_name": lastName, "nickname": nickname, "password": password]
             let result = try? encoder.encode(body)
-            return result!
-            
-        case let .createUser(email, first_name, last_name, nickname, password):
-            let encoder = JSONEncoder()
-            let body: [String: String] = ["email": email, "first_name": first_name, "last_name": last_name, "nickname": nickname, "password": password]
-            let result = try? encoder.encode(body)
-            return result!
-            
-        case let .deleteUser(_:user_id):
-            let body: [String: Int] = ["user_id": user_id]
-            let result = try? JSONSerialization.data(withJSONObject: body, options: [])
             return result!
             
         default:
@@ -142,37 +62,12 @@ enum Route {
         }
     }
     
-    func Parameters() -> [String: String] {
-        switch self {
-        case let .getUser(nickname):
-            return ["nickname": nickname]
-        case .getUserCampaigns:
-            <#code#>
-        case .getUserPledges:
-            <#code#>
-        case .getAllCampaigns:
-            <#code#>
-        case .getCampaign:
-            <#code#>
-        case .getCampaignPledges:
-            <#code#>
-
-        default:
-            return [:]
-        }
-    }
-    
     func headers() -> [String: String] {
         switch self {
-        case .loginUser, .createUser:
+        case .login, .signUp:
             return ["Content-Type": "application/json"]
         default:
-            let keychain = KeychainSwift()
-            let token = keychain.get("token")
-            let email = keychain.get("email")
-            return ["Content-Type": "application/json",
-                    "x-User-Token": "\(token!)",
-                    "x-User-Email": email!]
+            return ["Content-Type": "application/json", "Authorization":"Bearer 32f1dcdd06a598cc5d183cca179dc5be"]
         }
     }
 }
