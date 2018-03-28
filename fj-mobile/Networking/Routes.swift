@@ -52,6 +52,8 @@ enum Route {
     //Routes User Related
     //GET
     case getUser(username: String)
+    case getUserCampaigns
+    case getUserPledges
     //POST
     case loginUser(email: String, password: String)
     case createUser(email: String, firstName: String, lastName: String, nickname: String, password: String)
@@ -66,7 +68,7 @@ enum Route {
     case getAllCampaigns
     case getCampaign
     //user/campaigns
-    case getUserCampaigns
+    case getCampaignPledges
     //POST
     case postCampaign(title: String, description: String, goal: String)
     //UPDATE
@@ -77,7 +79,6 @@ enum Route {
     ////////////////////////////////////////////////
     //Routes Pledges Related
     //GET
-    case getCampaignPledges //When you are getting the campaign pledges
     //POST
     case postPledge
     //DELETE
@@ -85,7 +86,7 @@ enum Route {
     
     func method() -> String {
         switch self {
-        case .getUser, .getAllCampaigns, .getCampaign, .getUserCampaigns, .getCampaignPledges:
+    case .getUser, .getUserCampaigns, .getAllCampaigns, .getCampaign, .getCampaignPledges, .getUserPledges:
             return "GET"
         case .loginUser, .createUser, .postCampaign, .postPledge:
             return "POST"
@@ -96,21 +97,31 @@ enum Route {
     
     func path() -> String {
         switch self {
-        case .getAllCampaigns:
+        case .getUser, .logoutUser, .getUserPledges:
             return "session"
+    case .getUserCampaigns, .getAllCampaigns, .getCampaign, .getCampaignPledges:
+            return "campaign"
+        case .loginUser:
+            return "get token"
+        case .createUser:
+            return "new user"
         case .postCampaign:
-            return "campaigns"
-        case .login:
-            return "login"
-        case .signUp:
-            return "users"
+            return "new campaign"
+        case .postPledge:
+            return "new pledge"
+        case .deleteUser:
+            return ""
+        case .deleteCampaign:
+            return ""
+        case .deletePledge:
+            return ""
         }
     }
     
     func body() -> Data? {
         switch self {
-        case let .signUp(email, firstName, lastName, nickname, password, imageUrlString):
-            let user = User(nickname: nickname, email: email, firstName: firstName, lastName: lastName, password: password, imageUrlString: imageUrlString)
+        case let .createUser(email, firstName, lastName, nickname, password):
+            let user = User(email: email, firstName: firstName, lastName: lastName, nickname: nickname, password: password)
             let encoder = JSONEncoder()
             let result = try? encoder.encode(user)
             

@@ -15,7 +15,11 @@ class User: Codable {
     var firstName: String
     var lastName: String
     var password: String
-    var imageUrlString: String
+    var id: Int
+    var authetication_token: String!
+    var user_campaigns: [Campaign]!
+    var user_pledges : [Pledges]!
+    var imageUrlString: String!
     
     static let sharedInstance = User()
     
@@ -31,16 +35,20 @@ class User: Codable {
         return instance
     }
     
-    init(nickname: String, email: String, firstName: String, lastName: String, password: String, imageUrlString: String) {
+    init(nickname: String, email: String, firstName: String, lastName: String, password: String, id: Int, authetication_token: String,user_campaigns: [Campaign], user_pledges : [Pledges], imageUrlString: String) {
         self.nickname = nickname
         self.email = email
         self.firstName = firstName
         self.lastName = lastName
         self.password = password
+        self.id = id
+        self.authetication_token = authetication_token
+        self.user_campaigns = user_campaigns
+        self.user_pledges = user_pledges
         self.imageUrlString = imageUrlString
     }
     
     convenience init() {
-        self.init(nickname: "", email: "", firstName: "", lastName: "", password: "", imageUrlString: "")
+        self.init(nickname: "", email: "", firstName: "", lastName: "", password: "", id: 0, authetication_token: "", user_campaigns: Campaign, user_pledges: [Pledges], imageUrlString: "")
     }
 }
