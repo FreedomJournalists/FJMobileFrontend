@@ -17,12 +17,13 @@ enum Route {
     
     func queryParameters() -> [String : String] {
         switch self {
-        case .login(email, password):
+        case let .login(email, password):
             return ["email": email, "password": password]
         default:
-            [:]
+            return [:]
         }
     }
+    
     func method() -> String {
         switch self {
         case .getAllCampaigns:
