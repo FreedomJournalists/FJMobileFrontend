@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import KeychainSwift
 
 enum Route {
     
-    case postCampaign(title: String, description: String, goal: String)
+    case postCampaign(title: String, description: String, goal: Int)
     case getAllCampaigns
     case login(email: String, password: String)
     case signUp(email: String, firstName: String, lastName: String, nickname: String, password: String)
@@ -58,6 +59,11 @@ enum Route {
             let result = try? encoder.encode(body)
             return result!
             
+        case let .postCampaign(title, description, goal):
+            let body: [String: Any] = ["title": title, "description": description, "goal": goal]
+            let result = try! JSONSerialization.data(withJSONObject: body, options: [])
+            return result
+            
         default:
             return nil
         }
@@ -68,7 +74,20 @@ enum Route {
         case .login, .signUp:
             return ["Content-Type": "application/json"]
         default:
-            return ["Content-Type": "application/json", "Authorization":"Bearer 32f1dcdd06a598cc5d183cca179dc5be"]
+            let keychain = KeychainSwift()
+            let token = keychain.get("fjToken")
+            let authorization = "Bearer " + token!
+            return ["Content-Type": "application/json", "Authorization":authorization]
         }
+    }
+}
+
+extension Encodable {
+    func asDictionary() throws -> [String: Any] {
+        let data = try JSONEncoder().encode(self)
+        guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
+            throw NSError()
+        }
+        return dictionary
     }
 }

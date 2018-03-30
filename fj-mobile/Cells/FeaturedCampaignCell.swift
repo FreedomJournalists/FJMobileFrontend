@@ -11,4 +11,7 @@ import UIKit
 class FeaturedCampaignCell: UITableViewCell {
     
     @IBOutlet weak var categoryLabel: UILabel!
+    
+    @IBOutlet weak var customImageView: CustomImageView!
+    @IBOutlet weak var campaignTitle: UILabel!
 }

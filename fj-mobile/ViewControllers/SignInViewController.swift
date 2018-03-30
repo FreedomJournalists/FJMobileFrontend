@@ -23,7 +23,7 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func SignInButtonTop(_ sender: Any) {
-        print("SignIn Button Toped")
+        print("SignIn Button Tapped")
         
         let keychain = KeychainSwift()
         
