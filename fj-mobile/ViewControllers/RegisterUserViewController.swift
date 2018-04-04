@@ -10,7 +10,7 @@ import UIKit
 import KeychainSwift
 
 class RegisterUserViewController: UIViewController {
-        
+    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var nicknameTextField: UITextField!
