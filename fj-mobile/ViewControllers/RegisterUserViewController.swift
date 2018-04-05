@@ -19,6 +19,15 @@ class RegisterUserViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     
     var user: User?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
