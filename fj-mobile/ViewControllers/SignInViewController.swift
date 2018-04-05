@@ -11,8 +11,8 @@ import KeychainSwift
 
 class SignInViewController: UIViewController {
     
-    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     var user: User?
     

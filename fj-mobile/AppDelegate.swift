@@ -25,8 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerForRemoteNotifications()
         
-        //IQKeyboardManager.sharedManager().enable = true
-        
         return true
     }
 

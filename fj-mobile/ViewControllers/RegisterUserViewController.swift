@@ -16,11 +16,14 @@ class RegisterUserViewController: UIViewController {
     @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-
+    @IBOutlet weak var titleLabel: UILabel!
+    
     var user: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleLabel.addCharacterSpacing(spacing: 4)
         
     }
     
