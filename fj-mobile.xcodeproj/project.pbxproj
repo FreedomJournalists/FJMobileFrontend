@@ -13,6 +13,8 @@
 		4813EA1A206D8A3200E3DC33 /* ViewCampaignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4813EA19206D8A3200E3DC33 /* ViewCampaignViewController.swift */; };
 		482561E22065AADD0081BDFD /* FeaturedCampaignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482561E12065AADD0081BDFD /* FeaturedCampaignCell.swift */; };
 		482E46812075A20500C79AE9 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E46802075A20500C79AE9 /* UILabel.swift */; };
+		482E468320770A8000C79AE9 /* CampaignUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E468220770A8000C79AE9 /* CampaignUserCell.swift */; };
+		482E468520770B7800C79AE9 /* CampaignDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E468420770B7800C79AE9 /* CampaignDescriptionCell.swift */; };
 		486BA068205DD3D900FAC959 /* CampaignsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BA067205DD3D900FAC959 /* CampaignsViewController.swift */; };
 		486BA06A205DD65A00FAC959 /* CampaignsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BA069205DD65A00FAC959 /* CampaignsTVCell.swift */; };
 		486BA06C205DDB0000FAC959 /* CampaignCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BA06B205DDB0000FAC959 /* CampaignCVCell.swift */; };
@@ -62,6 +64,8 @@
 		4813EA19206D8A3200E3DC33 /* ViewCampaignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCampaignViewController.swift; sourceTree = "<group>"; };
 		482561E12065AADD0081BDFD /* FeaturedCampaignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCampaignCell.swift; sourceTree = "<group>"; };
 		482E46802075A20500C79AE9 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		482E468220770A8000C79AE9 /* CampaignUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignUserCell.swift; sourceTree = "<group>"; };
+		482E468420770B7800C79AE9 /* CampaignDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignDescriptionCell.swift; sourceTree = "<group>"; };
 		486BA067205DD3D900FAC959 /* CampaignsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignsViewController.swift; sourceTree = "<group>"; };
 		486BA069205DD65A00FAC959 /* CampaignsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignsTVCell.swift; sourceTree = "<group>"; };
 		486BA06B205DDB0000FAC959 /* CampaignCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignCVCell.swift; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 				486BA069205DD65A00FAC959 /* CampaignsTVCell.swift */,
 				486BA06B205DDB0000FAC959 /* CampaignCVCell.swift */,
 				482561E12065AADD0081BDFD /* FeaturedCampaignCell.swift */,
+				482E468220770A8000C79AE9 /* CampaignUserCell.swift */,
+				482E468420770B7800C79AE9 /* CampaignDescriptionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -470,8 +476,10 @@
 				482E46812075A20500C79AE9 /* UILabel.swift in Sources */,
 				4891673D20603D2B00F94744 /* CreateCampaignViewController.swift in Sources */,
 				48B49EF9205C744400B1AA8B /* AppDelegate.swift in Sources */,
+				482E468320770A8000C79AE9 /* CampaignUserCell.swift in Sources */,
 				4871DE27206420F10048678C /* User.swift in Sources */,
 				4809ED6E205DE9EA00583127 /* SignInViewController.swift in Sources */,
+				482E468520770B7800C79AE9 /* CampaignDescriptionCell.swift in Sources */,
 				ECF6D67F206B452A001DE5F6 /* Pledges.swift in Sources */,
 				ECF6D67D206B451A001DE5F6 /* Campaign.swift in Sources */,
 				4813EA1A206D8A3200E3DC33 /* ViewCampaignViewController.swift in Sources */,
