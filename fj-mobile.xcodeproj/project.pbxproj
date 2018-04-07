@@ -118,14 +118,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		486BA064205DD10900FAC959 /* Cells */ = {
+		482E468B207868E500C79AE9 /* campaignsVC */ = {
 			isa = PBXGroup;
 			children = (
 				486BA069205DD65A00FAC959 /* CampaignsTVCell.swift */,
 				486BA06B205DDB0000FAC959 /* CampaignCVCell.swift */,
 				482561E12065AADD0081BDFD /* FeaturedCampaignCell.swift */,
+			);
+			path = campaignsVC;
+			sourceTree = "<group>";
+		};
+		482E468E2078691400C79AE9 /* viewCampaignVC */ = {
+			isa = PBXGroup;
+			children = (
 				482E468220770A8000C79AE9 /* CampaignUserCell.swift */,
 				482E468420770B7800C79AE9 /* CampaignDescriptionCell.swift */,
+			);
+			path = viewCampaignVC;
+			sourceTree = "<group>";
+		};
+		486BA064205DD10900FAC959 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				482E468E2078691400C79AE9 /* viewCampaignVC */,
+				482E468B207868E500C79AE9 /* campaignsVC */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -189,7 +205,6 @@
 				4871DE25206420D70048678C /* Models */,
 				4891673B205F32F800F94744 /* Networking */,
 				486BA064205DD10900FAC959 /* Cells */,
-				EC925BC6205EF29A0083237B /* Login */,
 				48B49F27205C746500B1AA8B /* ViewControllers */,
 				48B49F26205C745500B1AA8B /* Storyboards */,
 				48B49EFF205C744400B1AA8B /* Assets.xcassets */,
@@ -255,13 +270,6 @@
 				117AD37BFDCBA24E3C84A50C /* Pods_fj_mobile.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EC925BC6205EF29A0083237B /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
