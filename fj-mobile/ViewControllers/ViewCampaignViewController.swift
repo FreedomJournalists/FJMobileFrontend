@@ -46,6 +46,8 @@ extension ViewCampaignViewController: UITableViewDelegate, UITableViewDataSource
             
             cell.descriptionTextField.text = self.campaign?.description
             cell.descriptionTextField.sizeToFit()
+            cell.descriptionTextField.isScrollEnabled = false
+            
             cell.titleLabel.text = self.campaign?.title
             
             self.secondCellHeight = cell.descriptionTextField.contentSize.height + cell.titleLabel.intrinsicContentSize.height + 10
