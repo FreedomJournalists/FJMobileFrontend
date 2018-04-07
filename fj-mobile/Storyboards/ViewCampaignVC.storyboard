@@ -80,7 +80,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="descriptionLabel" destination="AJ2-Ld-qYv" id="ytL-GP-IkU"/>
+                                            <outlet property="descriptionTextField" destination="AJ2-Ld-qYv" id="XrD-Oa-uc2"/>
                                             <outlet property="titleLabel" destination="ZDW-Fd-Vc6" id="Edv-YT-ceR"/>
                                         </connections>
                                     </tableViewCell>

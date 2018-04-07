@@ -88,13 +88,8 @@ class RegisterUserViewController: UIViewController {
             {
                 let alertController = UIAlertController(title: "Alert", message: userMessage, preferredStyle: .alert)
                 
-                let OKAction = UIAlertAction(title: "OK BOIIII", style: .default)
+                let OKAction = UIAlertAction(title: "OK", style: .default)
                 { (action:UIAlertAction!) in
-                    print("Ok button tapped")
-                    DispatchQueue.main.async
-                        {
-                            self.dismiss(animated: true, completion: nil)
-                    }
                 }
                 alertController.addAction(OKAction)
                 self.present(alertController, animated: true, completion: nil)

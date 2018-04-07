@@ -12,6 +12,7 @@ class ViewCampaignViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var campaign: Campaign?
+    var secondCellHeight: CGFloat = 0
     
     @IBAction func contributeButton(_ sender: Any) {
     }
@@ -21,6 +22,8 @@ class ViewCampaignViewController: UIViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        self.tableView.reloadData()
     }
 }
 
@@ -41,8 +44,11 @@ extension ViewCampaignViewController: UITableViewDelegate, UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: "campaignDescriptionCell", for: indexPath) as! CampaignDescriptionCell
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             
-            cell.descriptionLabel.text = self.campaign?.description
+            cell.descriptionTextField.text = self.campaign?.description
+            cell.descriptionTextField.sizeToFit()
             cell.titleLabel.text = self.campaign?.title
+            
+            self.secondCellHeight = cell.descriptionTextField.contentSize.height + cell.titleLabel.intrinsicContentSize.height + 10
             return cell
         }
     }
@@ -50,7 +56,7 @@ extension ViewCampaignViewController: UITableViewDelegate, UITableViewDataSource
         if indexPath.row == 0 {
             return 156
         } else {
-            return 354
+            return self.secondCellHeight
         }
     }
 

@@ -11,6 +11,6 @@ import UIKit
 class CampaignDescriptionCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UITextView!
+    @IBOutlet weak var descriptionTextField: UITextView!
     
 }

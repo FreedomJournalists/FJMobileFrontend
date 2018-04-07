@@ -39,6 +39,13 @@ extension CreateCampaignViewController {
         guard let description = descriptionTextView.text else {return}
         guard let goal = Int(goalTextField.text!) else {return}
         guard let title = titleTextField.text else {return}
+//        guard let image = campaignImage else {return}
+        
+//        // Create path.
+//        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+//        let filePath = URL("\(paths[0])/campaignImage.png")
+//        // Save image.
+//        UIImagePNGRepresentation(image)?.write(to: filePath)
         
         Network.instance.fetch(route: .postCampaign(title: title, description: description, goal: goal)) { (data, resp) in
             print("done \(resp)")
