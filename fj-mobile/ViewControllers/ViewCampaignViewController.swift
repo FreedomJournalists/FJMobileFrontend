@@ -38,6 +38,7 @@ extension ViewCampaignViewController: UITableViewDelegate, UITableViewDataSource
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             
             cell.fullNameLabel.text = "Full Name"
+            cell.progressLabel.text = String(Int((self.campaign!.money_raised))) + " / " + String(self.campaign!.goal)
             //            cell.profileImage.loadImageFromUrlString(urlString: )
             return cell
         } else {

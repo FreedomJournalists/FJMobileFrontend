@@ -12,4 +12,7 @@ class CampaignUserCell: UITableViewCell {
     
     @IBOutlet weak var profileImage: CustomImageView!
     @IBOutlet weak var fullNameLabel: UILabel!
+    
+    //    This is not for the user. It is for the campaign :>
+    @IBOutlet weak var progressLabel: UILabel!
 }
