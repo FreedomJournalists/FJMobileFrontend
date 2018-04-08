@@ -62,7 +62,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cGh-TZ-q3Q">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cGh-TZ-q3Q">
                                 <rect key="frame" x="16" y="58" width="343" height="183"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="183" id="euh-T4-fbc"/>

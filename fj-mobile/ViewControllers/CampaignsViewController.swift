@@ -53,6 +53,11 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
             let imageUrl = currentCampaign.image_file_url
             cell.customImageView.loadImageFromUrlString(urlString: imageUrl)
             cell.campaignTitle.text = currentCampaign.title
+            cell.campaignTitle.sizeToFit()
+            
+            cell.progressLabel.text = String(Int(currentCampaign.money_raised)) + " / " + String(currentCampaign.goal)
+            cell.progressLabel.sizeToFit()
+            
             return cell
         } else {
             
@@ -154,6 +159,9 @@ extension CampaignsViewController: UICollectionViewDelegate, UICollectionViewDat
         
         cell.titleLabel.text = currentCampaign.title
         cell.titleLabel.sizeToFit()
+        
+        cell.progressLabel.text = String(Int(currentCampaign.money_raised)) + " / " + String(currentCampaign.goal)
+        cell.progressLabel.sizeToFit()
         
         let imageUrl = currentCampaign.image_file_url
         
