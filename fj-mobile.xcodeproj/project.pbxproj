@@ -11,6 +11,11 @@
 		480D4F3F20606C8200AFCE13 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D4F3E20606C8200AFCE13 /* Networking.swift */; };
 		480D4F412060724400AFCE13 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D4F402060724400AFCE13 /* Routes.swift */; };
 		4813EA1A206D8A3200E3DC33 /* ViewCampaignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4813EA19206D8A3200E3DC33 /* ViewCampaignViewController.swift */; };
+		48216A93207BF48900EE6EBD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48216A92207BF48900EE6EBD /* ProfileViewController.swift */; };
+		48216A98207BF9FD00EE6EBD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48216A94207BF9FD00EE6EBD /* Profile.storyboard */; };
+		48216A99207BF9FD00EE6EBD /* ViewCampaignVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48216A96207BF9FD00EE6EBD /* ViewCampaignVC.storyboard */; };
+		48216A9E207BFA1F00EE6EBD /* Campaigns.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48216A9A207BFA1F00EE6EBD /* Campaigns.storyboard */; };
+		48216A9F207BFA1F00EE6EBD /* CreateCampaign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48216A9C207BFA1F00EE6EBD /* CreateCampaign.storyboard */; };
 		482561E22065AADD0081BDFD /* FeaturedCampaignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482561E12065AADD0081BDFD /* FeaturedCampaignCell.swift */; };
 		482E46812075A20500C79AE9 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E46802075A20500C79AE9 /* UILabel.swift */; };
 		482E468320770A8000C79AE9 /* CampaignUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E468220770A8000C79AE9 /* CampaignUserCell.swift */; };
@@ -27,9 +32,6 @@
 		48B49F03205C744400B1AA8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48B49F01205C744400B1AA8B /* LaunchScreen.storyboard */; };
 		48B49F0E205C744400B1AA8B /* fj_mobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B49F0D205C744400B1AA8B /* fj_mobileTests.swift */; };
 		48B49F19205C744400B1AA8B /* fj_mobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B49F18205C744400B1AA8B /* fj_mobileUITests.swift */; };
-		48B49F2A205C74A000B1AA8B /* Campaigns.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48B49F28205C74A000B1AA8B /* Campaigns.storyboard */; };
-		48B49F2D205C74F500B1AA8B /* CreateCampaign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48B49F2B205C74F500B1AA8B /* CreateCampaign.storyboard */; };
-		48B49F2F205C752900B1AA8B /* ViewCampaignVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48B49F2E205C752900B1AA8B /* ViewCampaignVC.storyboard */; };
 		EAF8D41F2E6D1E24C29F96CE /* Pods_fj_mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117AD37BFDCBA24E3C84A50C /* Pods_fj_mobile.framework */; };
 		ECCE5541206B03750097F9B8 /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCE5540206B03750097F9B8 /* RegisterUserViewController.swift */; };
 		ECF6D67D206B451A001DE5F6 /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF6D67C206B451A001DE5F6 /* Campaign.swift */; };
@@ -62,6 +64,11 @@
 		480D4F3E20606C8200AFCE13 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		480D4F402060724400AFCE13 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		4813EA19206D8A3200E3DC33 /* ViewCampaignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCampaignViewController.swift; sourceTree = "<group>"; };
+		48216A92207BF48900EE6EBD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		48216A95207BF9FD00EE6EBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
+		48216A97207BF9FD00EE6EBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ViewCampaignVC.storyboard; sourceTree = "<group>"; };
+		48216A9B207BFA1F00EE6EBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Campaigns.storyboard; sourceTree = "<group>"; };
+		48216A9D207BFA1F00EE6EBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CreateCampaign.storyboard; sourceTree = "<group>"; };
 		482561E12065AADD0081BDFD /* FeaturedCampaignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCampaignCell.swift; sourceTree = "<group>"; };
 		482E46802075A20500C79AE9 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		482E468220770A8000C79AE9 /* CampaignUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignUserCell.swift; sourceTree = "<group>"; };
@@ -84,9 +91,6 @@
 		48B49F14205C744400B1AA8B /* fj-mobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fj-mobileUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B49F18205C744400B1AA8B /* fj_mobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fj_mobileUITests.swift; sourceTree = "<group>"; };
 		48B49F1A205C744400B1AA8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48B49F29205C74A000B1AA8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "fj-mobile/Storyboards/Base.lproj/Campaigns.storyboard"; sourceTree = "<group>"; };
-		48B49F2C205C74F500B1AA8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "fj-mobile/Storyboards/fj-mobile/Storyboards/Base.lproj/CreateCampaign.storyboard"; sourceTree = "<group>"; };
-		48B49F2E205C752900B1AA8B /* ViewCampaignVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewCampaignVC.storyboard; sourceTree = "<group>"; };
 		ECCE5540206B03750097F9B8 /* RegisterUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
 		ECF6D67C206B451A001DE5F6 /* Campaign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
 		ECF6D67E206B452A001DE5F6 /* Pledges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pledges.swift; sourceTree = "<group>"; };
@@ -236,9 +240,10 @@
 			isa = PBXGroup;
 			children = (
 				48B49EFC205C744400B1AA8B /* Main.storyboard */,
-				48B49F28205C74A000B1AA8B /* Campaigns.storyboard */,
-				48B49F2B205C74F500B1AA8B /* CreateCampaign.storyboard */,
-				48B49F2E205C752900B1AA8B /* ViewCampaignVC.storyboard */,
+				48216A9A207BFA1F00EE6EBD /* Campaigns.storyboard */,
+				48216A9C207BFA1F00EE6EBD /* CreateCampaign.storyboard */,
+				48216A94207BF9FD00EE6EBD /* Profile.storyboard */,
+				48216A96207BF9FD00EE6EBD /* ViewCampaignVC.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 				4809ED6D205DE9EA00583127 /* SignInViewController.swift */,
 				ECCE5540206B03750097F9B8 /* RegisterUserViewController.swift */,
 				486BA067205DD3D900FAC959 /* CampaignsViewController.swift */,
+				48216A92207BF48900EE6EBD /* ProfileViewController.swift */,
 				4891673C20603D2B00F94744 /* CreateCampaignViewController.swift */,
 				4813EA19206D8A3200E3DC33 /* ViewCampaignViewController.swift */,
 			);
@@ -387,11 +393,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48216A9F207BFA1F00EE6EBD /* CreateCampaign.storyboard in Resources */,
+				48216A98207BF9FD00EE6EBD /* Profile.storyboard in Resources */,
 				48B49F03205C744400B1AA8B /* LaunchScreen.storyboard in Resources */,
+				48216A99207BF9FD00EE6EBD /* ViewCampaignVC.storyboard in Resources */,
 				48B49F00205C744400B1AA8B /* Assets.xcassets in Resources */,
-				48B49F2F205C752900B1AA8B /* ViewCampaignVC.storyboard in Resources */,
-				48B49F2D205C74F500B1AA8B /* CreateCampaign.storyboard in Resources */,
-				48B49F2A205C74A000B1AA8B /* Campaigns.storyboard in Resources */,
+				48216A9E207BFA1F00EE6EBD /* Campaigns.storyboard in Resources */,
 				48B49EFE205C744400B1AA8B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +491,7 @@
 				482E46812075A20500C79AE9 /* UILabel.swift in Sources */,
 				4891673D20603D2B00F94744 /* CreateCampaignViewController.swift in Sources */,
 				48B49EF9205C744400B1AA8B /* AppDelegate.swift in Sources */,
+				48216A93207BF48900EE6EBD /* ProfileViewController.swift in Sources */,
 				482E468320770A8000C79AE9 /* CampaignUserCell.swift in Sources */,
 				4871DE27206420F10048678C /* User.swift in Sources */,
 				4809ED6E205DE9EA00583127 /* SignInViewController.swift in Sources */,
@@ -528,6 +536,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		48216A94207BF9FD00EE6EBD /* Profile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48216A95207BF9FD00EE6EBD /* Base */,
+			);
+			name = Profile.storyboard;
+			sourceTree = "<group>";
+		};
+		48216A96207BF9FD00EE6EBD /* ViewCampaignVC.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48216A97207BF9FD00EE6EBD /* Base */,
+			);
+			name = ViewCampaignVC.storyboard;
+			sourceTree = "<group>";
+		};
+		48216A9A207BFA1F00EE6EBD /* Campaigns.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48216A9B207BFA1F00EE6EBD /* Base */,
+			);
+			name = Campaigns.storyboard;
+			sourceTree = "<group>";
+		};
+		48216A9C207BFA1F00EE6EBD /* CreateCampaign.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48216A9D207BFA1F00EE6EBD /* Base */,
+			);
+			name = CreateCampaign.storyboard;
+			sourceTree = "<group>";
+		};
 		48B49EFC205C744400B1AA8B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -542,22 +582,6 @@
 				48B49F02205C744400B1AA8B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		48B49F28205C74A000B1AA8B /* Campaigns.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				48B49F29205C74A000B1AA8B /* Base */,
-			);
-			name = Campaigns.storyboard;
-			sourceTree = "<group>";
-		};
-		48B49F2B205C74F500B1AA8B /* CreateCampaign.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				48B49F2C205C74F500B1AA8B /* Base */,
-			);
-			name = CreateCampaign.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

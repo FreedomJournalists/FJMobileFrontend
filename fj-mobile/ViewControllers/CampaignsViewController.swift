@@ -20,6 +20,9 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
 //        Segue to createCampaignVC
         performSegue(withIdentifier: "createCampaignSegue", sender: sender)
     }
+    @IBAction func profileButton(_ sender: Any) {
+        performSegue(withIdentifier: "profileSegue", sender: sender)
+    }
     
     var storedOffsets = [Int: CGFloat]()
     
