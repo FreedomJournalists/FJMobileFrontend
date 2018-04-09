@@ -16,6 +16,7 @@
 		48216A99207BF9FD00EE6EBD /* ViewCampaignVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48216A96207BF9FD00EE6EBD /* ViewCampaignVC.storyboard */; };
 		48216A9E207BFA1F00EE6EBD /* Campaigns.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48216A9A207BFA1F00EE6EBD /* Campaigns.storyboard */; };
 		48216A9F207BFA1F00EE6EBD /* CreateCampaign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48216A9C207BFA1F00EE6EBD /* CreateCampaign.storyboard */; };
+		48216AA2207BFBCF00EE6EBD /* ProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48216AA1207BFBCF00EE6EBD /* ProfileInfoCell.swift */; };
 		482561E22065AADD0081BDFD /* FeaturedCampaignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482561E12065AADD0081BDFD /* FeaturedCampaignCell.swift */; };
 		482E46812075A20500C79AE9 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E46802075A20500C79AE9 /* UILabel.swift */; };
 		482E468320770A8000C79AE9 /* CampaignUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E468220770A8000C79AE9 /* CampaignUserCell.swift */; };
@@ -69,6 +70,7 @@
 		48216A97207BF9FD00EE6EBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ViewCampaignVC.storyboard; sourceTree = "<group>"; };
 		48216A9B207BFA1F00EE6EBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Campaigns.storyboard; sourceTree = "<group>"; };
 		48216A9D207BFA1F00EE6EBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CreateCampaign.storyboard; sourceTree = "<group>"; };
+		48216AA1207BFBCF00EE6EBD /* ProfileInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCell.swift; sourceTree = "<group>"; };
 		482561E12065AADD0081BDFD /* FeaturedCampaignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCampaignCell.swift; sourceTree = "<group>"; };
 		482E46802075A20500C79AE9 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		482E468220770A8000C79AE9 /* CampaignUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignUserCell.swift; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48216AA0207BFBB200EE6EBD /* profileVC */ = {
+			isa = PBXGroup;
+			children = (
+				48216AA1207BFBCF00EE6EBD /* ProfileInfoCell.swift */,
+			);
+			path = profileVC;
+			sourceTree = "<group>";
+		};
 		482E468B207868E500C79AE9 /* campaignsVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +154,7 @@
 		486BA064205DD10900FAC959 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				48216AA0207BFBB200EE6EBD /* profileVC */,
 				482E468E2078691400C79AE9 /* viewCampaignVC */,
 				482E468B207868E500C79AE9 /* campaignsVC */,
 			);
@@ -344,7 +355,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Tony Cioara";
 				TargetAttributes = {
 					48B49EF4205C744400B1AA8B = {
@@ -491,6 +502,7 @@
 				482E46812075A20500C79AE9 /* UILabel.swift in Sources */,
 				4891673D20603D2B00F94744 /* CreateCampaignViewController.swift in Sources */,
 				48B49EF9205C744400B1AA8B /* AppDelegate.swift in Sources */,
+				48216AA2207BFBCF00EE6EBD /* ProfileInfoCell.swift in Sources */,
 				48216A93207BF48900EE6EBD /* ProfileViewController.swift in Sources */,
 				482E468320770A8000C79AE9 /* CampaignUserCell.swift in Sources */,
 				4871DE27206420F10048678C /* User.swift in Sources */,
@@ -601,6 +613,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -608,6 +621,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -658,6 +672,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -665,6 +680,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
