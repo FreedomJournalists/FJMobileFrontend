@@ -15,6 +15,7 @@ enum Route {
     case getAllCampaigns
     case login(email: String, password: String)
     case signUp(email: String, firstName: String, lastName: String, nickname: String, password: String)
+    case getCurrentUser
     
     func queryParameters() -> [String : String] {
         switch self {
@@ -35,6 +36,8 @@ enum Route {
             return "GET"
         case .signUp:
             return "POST"
+        case .getCurrentUser:
+            return "GET"
         }
     }
     
@@ -48,6 +51,8 @@ enum Route {
             return "login"
         case .signUp:
             return "users"
+        case .getCurrentUser:
+            return "me"
         }
     }
     

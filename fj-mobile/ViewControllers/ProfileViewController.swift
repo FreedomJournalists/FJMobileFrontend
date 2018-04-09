@@ -13,12 +13,20 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     var currentCell: ProfileInfoCell?
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        loadUser {
+            DispatchQueue.main.async {
+                print("USER: \(self.user!.profile_image_file_url)")
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,13 +34,20 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "profileInfoCell", for: indexPath) as! ProfileInfoCell
         
-        cell.emailLabel.text = "testmail@mail.com"
-        cell.firstNameLabel.text = "Tony"
-        cell.lastNameLabel.text = "Cioara"
-        cell.nicknameLabel.text = "TestNickname"
+        cell.selectionStyle = .none
+        guard let user = self.user else {return cell}
+        
+        cell.emailLabel.text = user.email
+        cell.firstNameLabel.text = user.first_name
+        cell.lastNameLabel.text = user.last_name
+        cell.nicknameLabel.text = user.nickname
+        cell.profileImageView.loadImageFromUrlString(urlString: user.profile_image_file_url)
+        
         cell.delegate = self
+        
         return cell
     }
     
@@ -43,6 +58,23 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func didClickSelectButton(cell: ProfileInfoCell) {
         self.currentCell = cell
         selectImage()
+    }
+}
+
+extension ProfileViewController {
+    func loadUser(completion: @escaping ()->()) {
+        Network.instance.fetch(route: .getCurrentUser) { (data, resp) in
+            print(resp)
+            let jsonUser = try? JSONDecoder().decode(User.self, from: data)
+            if let user = jsonUser {
+                self.user = user
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                completion()
+            }
+        }
     }
 }
 
