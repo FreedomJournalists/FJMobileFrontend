@@ -16,7 +16,9 @@ class Network {
     
     func fetch(route: Route, completion: @escaping (Data, HTTPURLResponse) -> Void) {
         var fullPath = baseURL + route.path()
-        fullPath.append(contentsOf: route.queryParameters().queryParameters)
+        if route.queryParameters() != [:] {
+            fullPath.append(contentsOf: "?" + route.queryParameters().queryParameters)
+        }
         let pathURL = URL(string: fullPath)
         var request = URLRequest(url: pathURL!)
         
@@ -26,7 +28,7 @@ class Network {
         
         
         session.dataTask(with: request) { (data, resp, err) in
-            //            print("DATA:" + String(describing: data) + "RESP:" + String(describing: resp) + "ERR:" + String(describing: err))
+//                        print("DATA:" + String(describing: data) + "RESP:" + String(describing: resp) + "ERR:" + String(describing: err))
             if let data = data, let resp = resp {
                 completion(data, resp as! HTTPURLResponse)
                 

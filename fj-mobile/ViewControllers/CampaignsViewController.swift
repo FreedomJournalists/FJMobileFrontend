@@ -20,38 +20,69 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
 //        Segue to createCampaignVC
         performSegue(withIdentifier: "createCampaignSegue", sender: sender)
     }
+    @IBAction func profileButton(_ sender: Any) {
+        performSegue(withIdentifier: "profileSegue", sender: sender)
+    }
     
     var storedOffsets = [Int: CGFloat]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.model = generateRandomData()
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
         self.loadCampaigns {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
         
-        self.tableView.allowsSelection = false
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+//        self.tableView.allowsSelection = false
+        
     }
     
 //       Set up tableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "featuredCampaignCell", for: indexPath) as! FeaturedCampaignCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            
+            let currentCampaign = self.campaigns[0]
+            
             cell.categoryLabel.text = "Campaign of the day"
+            
+            let imageUrl = currentCampaign.image_file_url
+            cell.customImageView.loadImageFromUrlString(urlString: imageUrl)
+            cell.campaignTitle.text = currentCampaign.title
+            cell.campaignTitle.sizeToFit()
+            
+            cell.progressLabel.text = String(Int(currentCampaign.money_raised)) + " / " + String(currentCampaign.goal)
+            cell.progressLabel.sizeToFit()
+            
             return cell
         } else {
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "campaignsTVCell", for: indexPath) as! CampaignsTVCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
             cell.categoryLabel.text = "Trending this week"
             return cell
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let currentCampaign = self.campaigns[0]
+            self.segueToViewCampaign(selectedCampaign: currentCampaign)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return model.count
+        if self.campaigns.count == 0 {
+            return 0
+        }
         return 2
     }
     
@@ -89,6 +120,7 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
 extension CampaignsViewController {
     func loadCampaigns(completion: @escaping ()->()) {
         Network.instance.fetch(route: .getAllCampaigns) { (data, resp) in
+            print(resp)
             let jsonCampaigns = try? JSONDecoder().decode([Campaign].self, from: data)
             if let campaigns = jsonCampaigns {
                 self.campaigns = campaigns
@@ -99,6 +131,17 @@ extension CampaignsViewController {
                 completion()
             }
         }
+    }
+}
+
+extension CampaignsViewController {
+    func segueToViewCampaign(selectedCampaign: Campaign) {
+        let storyboard = UIStoryboard(name: "ViewCampaignVC", bundle: Bundle.main)
+        let viewCampaignVC = storyboard.instantiateInitialViewController() as! ViewCampaignViewController
+        
+//        let viewCampaignVC = storyboard?.instantiateViewController(withIdentifier: "ViewCampaignVC") as! ViewCampaignViewController
+        viewCampaignVC.campaign = selectedCampaign
+        navigationController?.pushViewController(viewCampaignVC, animated: true)
     }
 }
 
@@ -115,10 +158,15 @@ extension CampaignsViewController: UICollectionViewDelegate, UICollectionViewDat
         
 //        cell.backgroundColor = model[collectionView.tag][indexPath.item]
         
-        cell.titleLabel.text = self.campaigns[indexPath.row + 1].title
+        let currentCampaign = self.campaigns[indexPath.row + 1]
+        
+        cell.titleLabel.text = currentCampaign.title
         cell.titleLabel.sizeToFit()
         
-        let imageUrl = self.campaigns[indexPath.row].image_file_url
+        cell.progressLabel.text = String(Int(currentCampaign.money_raised)) + " / " + String(currentCampaign.goal)
+        cell.progressLabel.sizeToFit()
+        
+        let imageUrl = currentCampaign.image_file_url
         
         cell.imageView.loadImageFromUrlString(urlString: imageUrl)
         
@@ -126,7 +174,9 @@ extension CampaignsViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("clicked")
+        let currentCampaign = self.campaigns[indexPath.row + 1]
+        self.segueToViewCampaign(selectedCampaign: currentCampaign)
+        
     }
 }
 
