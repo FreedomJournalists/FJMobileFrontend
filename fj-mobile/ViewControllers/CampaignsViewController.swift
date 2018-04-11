@@ -30,13 +30,10 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         self.model = generateRandomData()
         
-//        let customColor = UIColor.init(red: 216, green: 173, blue: 131, alpha: 100)
-//        navigationController?.navigationBar.barTintColor = customColor
+//        Navigation bar setup
         let navBackgroundImage = UIImage(named: "navigationBarBackground")
-        navigationController?.navigationBar.setBackgroundImage(navBackgroundImage,
-                                                                    for: .default)
+        navigationController?.navigationBar.setBackgroundImage(navBackgroundImage, for: .default)
         navigationController?.navigationBar.tintColor = UIColor.black
-        
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -60,6 +57,9 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
             let currentCampaign = self.campaigns[0]
             
             cell.categoryLabel.text = "Campaign of the day"
+            
+            cell.imageView?.layer.cornerRadius = 5
+            cell.darkView.layer.cornerRadius = 5
             
             let imageUrl = currentCampaign.image_file_url
             cell.customImageView.loadImageFromUrlString(urlString: imageUrl)
@@ -173,6 +173,9 @@ extension CampaignsViewController: UICollectionViewDelegate, UICollectionViewDat
         
         cell.progressLabel.text = String(Int(currentCampaign.money_raised)) + " / " + String(currentCampaign.goal)
         cell.progressLabel.sizeToFit()
+        
+        cell.darkView.layer.cornerRadius = 5
+        cell.imageView.layer.cornerRadius = 5
         
         let imageUrl = currentCampaign.image_file_url
         

@@ -108,6 +108,7 @@
                                                                 <constraint firstItem="FHT-PE-zo3" firstAttribute="trailing" secondItem="NzJ-V3-FW1" secondAttribute="trailing" id="a2b-TI-VFr"/>
                                                             </constraints>
                                                             <connections>
+                                                                <outlet property="darkView" destination="FHT-PE-zo3" id="IHe-S7-hd6"/>
                                                                 <outlet property="imageView" destination="NzJ-V3-FW1" id="MHI-9X-D73"/>
                                                                 <outlet property="progressLabel" destination="aRe-6Z-DBA" id="pUg-6a-mBM"/>
                                                                 <outlet property="titleLabel" destination="cAI-6n-e3p" id="64O-mn-fVb"/>
@@ -204,6 +205,7 @@
                                             <outlet property="campaignTitle" destination="L1H-BG-a8v" id="cS1-fR-vhU"/>
                                             <outlet property="categoryLabel" destination="Idz-g3-R3E" id="ung-wX-3aL"/>
                                             <outlet property="customImageView" destination="mBk-ot-tka" id="iRm-vn-zOt"/>
+                                            <outlet property="darkView" destination="78p-Jt-7qV" id="cyB-79-6Qs"/>
                                             <outlet property="progressLabel" destination="pQ1-lv-tLg" id="49D-kj-XBP"/>
                                         </connections>
                                     </tableViewCell>
