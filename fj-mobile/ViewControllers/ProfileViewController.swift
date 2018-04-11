@@ -18,6 +18,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Profile"
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -68,7 +70,7 @@ extension ProfileViewController {
             let jsonUser = try? JSONDecoder().decode(User.self, from: data)
             if let user = jsonUser {
                 self.user = user
-                
+                print("TOKEN: \(user.token)")
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }

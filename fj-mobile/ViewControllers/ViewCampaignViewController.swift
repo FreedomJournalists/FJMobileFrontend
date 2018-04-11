@@ -26,6 +26,8 @@ class ViewCampaignViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Campaign"
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
