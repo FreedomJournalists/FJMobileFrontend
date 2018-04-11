@@ -31,8 +31,7 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
         self.model = generateRandomData()
         
 //        Navigation bar setup
-        let navBackgroundImage = UIImage(named: "navigationBarBackground")
-        navigationController?.navigationBar.setBackgroundImage(navBackgroundImage, for: .default)
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.85, green:0.68, blue:0.51, alpha:1.0)
         navigationController?.navigationBar.tintColor = UIColor.black
         
         self.tableView.delegate = self
