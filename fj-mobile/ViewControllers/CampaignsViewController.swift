@@ -30,6 +30,11 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         self.model = generateRandomData()
         
+        let customColor = UIColor.init(red: 216, green: 173, blue: 131, alpha: 100)
+        navigationController?.navigationBar.barTintColor = customColor
+        navigationController?.navigationBar.tintColor = UIColor.black
+        
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         

@@ -34,6 +34,10 @@ class RegisterUserViewController: UIViewController {
         
         titleLabel.addCharacterSpacing(spacing: 4)
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        view.addGestureRecognizer(tap)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -94,6 +98,18 @@ class RegisterUserViewController: UIViewController {
                 alertController.addAction(OKAction)
                 self.present(alertController, animated: true, completion: nil)
         }
+    }
+}
+
+extension RegisterUserViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterUserViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 

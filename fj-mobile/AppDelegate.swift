@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .current()
             .requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
         
+        
         application.registerForRemoteNotifications()
         
         return true

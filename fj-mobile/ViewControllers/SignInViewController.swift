@@ -30,6 +30,10 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         
         titleLabel.addCharacterSpacing(spacing: 4)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        view.addGestureRecognizer(tap)
     }
     
     @IBAction func SignInButtonTop(_ sender: Any) {
@@ -95,5 +99,17 @@ class SignInViewController: UIViewController {
                 completion()
             }
         }
+    }
+}
+
+extension SignInViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterUserViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

@@ -222,11 +222,13 @@
                     <navigationItem key="navigationItem" title="Campaigns" id="0MU-eM-cBl">
                         <rightBarButtonItems>
                             <barButtonItem image="PlusButton" id="a7y-XB-eZv" userLabel="plusButton">
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <connections>
                                     <action selector="addCampaignButton:" destination="2eN-zX-BhT" id="C2D-Q5-wZf"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="profileNavBar" id="hic-fF-AiH" userLabel="profileButton">
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <connections>
                                     <action selector="profileButton:" destination="2eN-zX-BhT" id="jhd-Zr-yzt"/>
                                 </connections>
