@@ -12,7 +12,13 @@ class ViewCampaignViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var campaign: Campaign?
-    var secondCellHeight: CGFloat = 0
+    var secondCellHeight: CGFloat = 0 {
+        didSet {
+            if secondCellHeight < 301 {
+                secondCellHeight = 301
+            }
+        }
+    }
     
     @IBAction func contributeButton(_ sender: Any) {
     }
