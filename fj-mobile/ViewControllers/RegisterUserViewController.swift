@@ -34,7 +34,7 @@ class RegisterUserViewController: UIViewController {
         
         titleLabel.addCharacterSpacing(spacing: 4)
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterUserViewController.dismissKeyboard))
         
         view.addGestureRecognizer(tap)
         

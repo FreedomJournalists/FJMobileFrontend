@@ -31,7 +31,7 @@ class SignInViewController: UIViewController {
         
         titleLabel.addCharacterSpacing(spacing: 4)
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignInViewController.dismissKeyboard))
         
         view.addGestureRecognizer(tap)
     }
