@@ -9,6 +9,12 @@
 import Foundation
 import KeychainSwift
 
+enum imageUploadRoute {
+    case campaignUpload
+    case userUpload
+    
+    func fileName
+}
 enum Route {
     
     case postCampaign(title: String, description: String, goal: Int)

@@ -2,17 +2,20 @@ PODS:
   - Alamofire (4.7.0)
   - IQKeyboardManagerSwift (5.0.8)
   - KeychainSwift (10.0.0)
+  - Kingfisher (4.6.3)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - IQKeyboardManagerSwift (~> 5.0.0)
   - KeychainSwift (~> 10.0)
+  - Kingfisher (~> 4.0)
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
   KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
+  Kingfisher: 98e6d5b5e807645743e8ed5ececd25d688d38452
 
-PODFILE CHECKSUM: e68b222c2440b6a6f8ea3caaa534aaa5fb26151e
+PODFILE CHECKSUM: 1b6b5b9d4af4ba8141edd61d127c8157da291899
 
 COCOAPODS: 1.4.0
