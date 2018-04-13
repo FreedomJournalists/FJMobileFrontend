@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class Network {
     static let instance = Network()
@@ -36,7 +37,38 @@ class Network {
             
             }.resume()
     }
+    
+    func imageUpload(route: imageUploadRoute, imageData: Data) {
+        let name = "image_file"
+        let fileName = route.fileName()
+        let fullPath = baseURL + route.Path()
+        let fullURL = URL(string: fullPath)
+        let headers = route.Headers()
+        Alamofire.upload(multipartFormData: { (multiPartFormData) in
+            
+            multiPartFormData.append(imageData, withName: name, fileName: fileName, mimeType: "image/png")
+            
+        }, usingThreshold: UInt64.init(), to: fullURL!, method: .patch, headers: headers, encodingCompletion: { (result) in
+            print("RESULT: \(result)")
+            switch result{
+            case .success(let upload, _, _):
+                
+                upload.uploadProgress(closure: { (progress) in
+                    //Print progress
+                })
+                
+                upload.responseJSON { response in
+                    print(response.description)
+                }
+                
+            case .failure(let encodingError):
+                print(encodingError.localizedDescription)
+            }
+            
+        })
+    }
 }
+
 
 extension URL {
     func appendingQueryParameters(_ parametersDictionary : Dictionary<String, String>) -> URL {

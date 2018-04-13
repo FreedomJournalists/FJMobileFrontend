@@ -21,6 +21,8 @@ class CreateCampaignViewController: UIViewController {
         }
     }
     
+    var campaignId: Int?
+    
     @IBAction func uploadImageButton(_ sender: Any) {
         selectImage()
     }
@@ -28,7 +30,7 @@ class CreateCampaignViewController: UIViewController {
     @IBAction func postButton(_ sender: Any) {
         postCampaign {
             DispatchQueue.main.async {
-                print("DONE")
+                self.uploadImage(image: self.campaignImage)
             }
         }
     }
@@ -38,6 +40,8 @@ class CreateCampaignViewController: UIViewController {
         
         self.title = "New Campaign"
     }
+    
+    
 }
 
 extension CreateCampaignViewController {
@@ -54,9 +58,18 @@ extension CreateCampaignViewController {
 //        UIImagePNGRepresentation(image)?.write(to: filePath)
         
         Network.instance.fetch(route: .postCampaign(title: title, description: description, goal: goal)) { (data, resp) in
-            print("done \(resp)")
+            let jsonCampaign = try? JSONDecoder().decode(Campaign.self, from: data)
+            if let campaign = jsonCampaign {
+                self.campaignId = campaign.id
             completion()
+            }
         }
+    }
+    
+    func uploadImage(image: UIImage) {
+        guard let imageData = UIImageJPEGRepresentation(image, 1)
+            else {return}
+        Network.instance.imageUpload(route: .campaignUpload(id: self.campaignId!), imageData: imageData)
     }
 }
 

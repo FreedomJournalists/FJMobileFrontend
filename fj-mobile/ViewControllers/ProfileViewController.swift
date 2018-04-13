@@ -25,7 +25,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         loadUser {
             DispatchQueue.main.async {
-                print("USER: \(self.user!.profile_image_file_url)")
+                print("USERIMAGE: \(self.user!.profile_image_file_url)")
+                print("TOKEN: \(self.user!.token)")
                 self.tableView.reloadData()
             }
         }
@@ -60,6 +61,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func didClickSelectButton(cell: ProfileInfoCell) {
         self.currentCell = cell
         selectImage()
+    }
+    
+    func uploadImage(image: UIImage) {
+        guard let imageData = UIImageJPEGRepresentation(image, 1)
+            else {return}
+        Network.instance.imageUpload(route: .userUpload(id: (self.user?.id)!), imageData: imageData)
     }
 }
 
@@ -110,6 +117,7 @@ extension ProfileViewController:  UIImagePickerControllerDelegate, UINavigationC
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         self.currentCell?.profileImageView.image = image
+        self.uploadImage(image: image)
         
         picker.dismiss(animated: true, completion: nil)
     }
