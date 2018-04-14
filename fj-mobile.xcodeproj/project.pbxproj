@@ -262,6 +262,7 @@
 		48B49F27205C746500B1AA8B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				48B7FE9E20813D9B00C30FD2 /* CreateCampaignViewController */,
 				4809ED6D205DE9EA00583127 /* SignInViewController.swift */,
 				ECCE5540206B03750097F9B8 /* RegisterUserViewController.swift */,
 				486BA067205DD3D900FAC959 /* CampaignsViewController.swift */,
@@ -270,6 +271,13 @@
 				4813EA19206D8A3200E3DC33 /* ViewCampaignViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		48B7FE9E20813D9B00C30FD2 /* CreateCampaignViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CreateCampaignViewController;
 			sourceTree = "<group>";
 		};
 		77425FEF65DA15CE36417D8E /* Pods */ = {

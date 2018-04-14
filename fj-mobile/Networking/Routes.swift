@@ -9,7 +9,7 @@
 import Foundation
 import KeychainSwift
 
-enum imageUploadRoute {
+enum ImageUploadRoute {
     case campaignUpload(id: Int)
     case userUpload(id: Int)
     
@@ -26,6 +26,15 @@ enum imageUploadRoute {
             return "users/\(id)"
         case let .campaignUpload(id):
             return "campaigns/\(id)"
+        }
+    }
+    
+    func name() -> String {
+        switch self {
+        case .userUpload:
+            return "profile_image_file"
+        case .campaignUpload:
+            return "image_file"
         }
     }
     

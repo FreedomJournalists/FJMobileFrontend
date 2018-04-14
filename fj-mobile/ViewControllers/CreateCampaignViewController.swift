@@ -30,7 +30,8 @@ class CreateCampaignViewController: UIViewController {
     @IBAction func postButton(_ sender: Any) {
         postCampaign {
             DispatchQueue.main.async {
-                self.uploadImage(image: self.campaignImage)
+                guard let image = self.campaignImage else {return}
+                self.uploadImage(image: image)
             }
         }
     }

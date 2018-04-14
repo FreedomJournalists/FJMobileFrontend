@@ -38,8 +38,8 @@ class Network {
             }.resume()
     }
     
-    func imageUpload(route: imageUploadRoute, imageData: Data) {
-        let name = "image_file"
+    func imageUpload(route: ImageUploadRoute, imageData: Data) {
+        let name = route.name()
         let fileName = route.fileName()
         let fullPath = baseURL + route.Path()
         let fullURL = URL(string: fullPath)
