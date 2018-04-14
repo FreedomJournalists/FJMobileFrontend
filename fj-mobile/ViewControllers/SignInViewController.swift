@@ -15,11 +15,20 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
     
+    let keychain = KeychainSwift()
+    
     var user: User?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
+        
+        if let token = self.keychain.get("fjToken") {
+            print("GOT HERE")
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "campaignsSegue", sender: self)
+            }
+        }
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -39,11 +48,9 @@ class SignInViewController: UIViewController {
     @IBAction func SignInButtonTop(_ sender: Any) {
         print("SignIn Button Tapped")
         
-        let keychain = KeychainSwift()
-        
         logInUser {
             DispatchQueue.main.async {
-                keychain.set(self.user!.token, forKey: "fjToken")
+                self.keychain.set(self.user!.token, forKey: "fjToken")
                 
                 self.performSegue(withIdentifier: "campaignsSegue", sender: self)
             }

@@ -29,11 +29,11 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileInfoCell" rowHeight="380" id="4V0-gz-0xz" customClass="ProfileInfoCell" customModule="fj_mobile" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="380"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileInfoCell" rowHeight="411" id="4V0-gz-0xz" customClass="ProfileInfoCell" customModule="fj_mobile" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="411"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4V0-gz-0xz" id="h8q-Cl-8GC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="379.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="410.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zUh-OZ-Swr" customClass="CustomImageView" customModule="fj_mobile" customModuleProvider="target">
@@ -99,6 +99,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1b-ZA-Dui">
+                                                    <rect key="frame" x="305" y="370" width="55" height="30"/>
+                                                    <state key="normal" title="Log Out"/>
+                                                    <connections>
+                                                        <action selector="logOutButton:" destination="4V0-gz-0xz" eventType="touchUpInside" id="IHK-We-n4h"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="gGm-Pn-qJn" firstAttribute="leading" secondItem="h8q-Cl-8GC" secondAttribute="leadingMargin" id="A33-E0-4W6"/>
@@ -116,12 +123,14 @@
                                                 <constraint firstItem="hRf-6z-4rF" firstAttribute="leading" secondItem="3MS-vf-uYa" secondAttribute="trailing" constant="26" id="gI4-SN-d1o"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="zUh-OZ-Swr" secondAttribute="trailing" constant="93" id="iLT-tZ-iu0"/>
                                                 <constraint firstItem="Tbs-EH-3Ho" firstAttribute="leading" secondItem="e40-Sd-rPI" secondAttribute="trailing" constant="32" id="ju5-a9-4oq"/>
+                                                <constraint firstItem="m1b-ZA-Dui" firstAttribute="bottom" secondItem="h8q-Cl-8GC" secondAttribute="bottomMargin" id="lQC-Z1-trc"/>
                                                 <constraint firstItem="e40-Sd-rPI" firstAttribute="leading" secondItem="h8q-Cl-8GC" secondAttribute="leadingMargin" id="o7L-qV-EK9"/>
                                                 <constraint firstItem="XBS-Zz-pFI" firstAttribute="leading" secondItem="h8q-Cl-8GC" secondAttribute="leadingMargin" id="pbd-1G-AV1"/>
                                                 <constraint firstItem="XBS-Zz-pFI" firstAttribute="top" secondItem="3MS-vf-uYa" secondAttribute="bottom" constant="12.5" id="qoH-3H-m8V"/>
                                                 <constraint firstItem="hRf-6z-4rF" firstAttribute="top" secondItem="zzt-jI-vLg" secondAttribute="bottom" constant="10" id="s9e-55-Gke"/>
                                                 <constraint firstItem="zUh-OZ-Swr" firstAttribute="leading" secondItem="h8q-Cl-8GC" secondAttribute="leadingMargin" constant="92" id="sJX-vJ-CTF"/>
                                                 <constraint firstItem="3MS-vf-uYa" firstAttribute="leading" secondItem="h8q-Cl-8GC" secondAttribute="leadingMargin" id="txS-d4-Bmc"/>
+                                                <constraint firstItem="m1b-ZA-Dui" firstAttribute="trailing" secondItem="h8q-Cl-8GC" secondAttribute="trailingMargin" id="uNv-iZ-uON"/>
                                                 <constraint firstItem="zUh-OZ-Swr" firstAttribute="top" secondItem="h8q-Cl-8GC" secondAttribute="topMargin" id="vS2-FS-7Eh"/>
                                             </constraints>
                                         </tableViewCellContentView>

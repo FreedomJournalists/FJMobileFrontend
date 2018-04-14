@@ -32,6 +32,8 @@ class CreateCampaignViewController: UIViewController {
             DispatchQueue.main.async {
                 guard let image = self.campaignImage else {return}
                 self.uploadImage(image: image)
+                self.dismiss(animated: true, completion: nil)
+                
             }
         }
     }

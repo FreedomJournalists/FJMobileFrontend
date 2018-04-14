@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ImageSelectionDelegate {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UserProfileDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -67,6 +67,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         guard let imageData = UIImageJPEGRepresentation(image, 1)
             else {return}
         Network.instance.imageUpload(route: .userUpload(id: (self.user?.id)!), imageData: imageData)
+    }
+    
+    func didClickLogOut(cell: ProfileInfoCell) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

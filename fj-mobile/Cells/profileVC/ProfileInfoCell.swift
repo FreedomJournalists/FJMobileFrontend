@@ -8,13 +8,14 @@
 
 import UIKit
 
-protocol ImageSelectionDelegate {
+protocol UserProfileDelegate {
     func didClickSelectButton(cell: ProfileInfoCell)
+    func didClickLogOut(cell: ProfileInfoCell)
 }
 
 class ProfileInfoCell: UITableViewCell {
     
-    var delegate: ImageSelectionDelegate? = nil
+    var delegate: UserProfileDelegate? = nil
     
     @IBOutlet weak var profileImageView: CustomImageView!
     @IBOutlet weak var firstNameLabel: UILabel!
@@ -24,6 +25,9 @@ class ProfileInfoCell: UITableViewCell {
     
     @IBAction func selectImageButton(_ sender: Any) {
         delegate?.didClickSelectButton(cell: self)
+    }
+    @IBAction func logOutButton(_ sender: Any) {
+        delegate?.didClickLogOut(cell: self)
     }
     
 }
