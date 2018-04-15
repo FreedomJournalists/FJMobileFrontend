@@ -23,6 +23,8 @@ class CreateCampaignViewController: UIViewController {
     
     var campaignId: Int?
     
+
+    
     @IBAction func uploadImageButton(_ sender: Any) {
         selectImage()
     }
@@ -43,7 +45,6 @@ class CreateCampaignViewController: UIViewController {
         
         self.title = "New Campaign"
     }
-    
     
 }
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UserProfileDelegate {
     
@@ -14,6 +15,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var currentCell: ProfileInfoCell?
     var user: User?
+    
+    let keychain = KeychainSwift()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +73,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func didClickLogOut(cell: ProfileInfoCell) {
+        print("clicked")
+        self.keychain.delete("fjToken")
         self.dismiss(animated: true, completion: nil)
     }
 }

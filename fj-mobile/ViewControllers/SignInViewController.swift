@@ -23,8 +23,24 @@ class SignInViewController: UIViewController {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
         
+//        self.keychain.delete("fjToken")
+        
+//        if let token = self.keychain.get("fjToken") {
+//            print("GOT HERE")
+//            print(token)
+//            DispatchQueue.main.async {
+//                self.performSegue(withIdentifier: "campaignsSegue", sender: self)
+//            }
+//        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+
+//        self.keychain.delete("fjToken")
+        
         if let token = self.keychain.get("fjToken") {
             print("GOT HERE")
+            print(token)
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "campaignsSegue", sender: self)
             }

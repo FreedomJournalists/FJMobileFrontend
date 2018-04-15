@@ -47,7 +47,7 @@ extension ViewCampaignViewController: UITableViewDelegate, UITableViewDataSource
             
             cell.fullNameLabel.text = "Full Name"
             cell.progressLabel.text = String(Int((self.campaign!.money_raised))) + " / " + String(self.campaign!.goal)
-            //            cell.profileImage.loadImageFromUrlString(urlString: )
+//            cell.profileImage.loadImageFromUrlString(urlString: (self.campaign?.user.profile_image_file_url)!)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "campaignDescriptionCell", for: indexPath) as! CampaignDescriptionCell
