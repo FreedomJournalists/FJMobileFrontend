@@ -86,7 +86,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.1015074823943662" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.12843860035211269" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <constraints>
                                                                             <constraint firstItem="aRe-6Z-DBA" firstAttribute="bottom" secondItem="FHT-PE-zo3" secondAttribute="bottomMargin" id="JFI-yW-dLJ"/>
                                                                             <constraint firstItem="cAI-6n-e3p" firstAttribute="centerX" secondItem="aRe-6Z-DBA" secondAttribute="centerX" id="TRb-HU-9sV"/>
@@ -180,7 +180,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.1015074824" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.13" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="pQ1-lv-tLg" secondAttribute="bottom" constant="9" id="J3Q-zV-M0A"/>
                                                         <constraint firstItem="L1H-BG-a8v" firstAttribute="top" secondItem="78p-Jt-7qV" secondAttribute="topMargin" id="QIJ-ZK-Qnb"/>

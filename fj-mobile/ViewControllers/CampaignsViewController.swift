@@ -34,6 +34,7 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
         navigationController?.navigationBar.barTintColor = UIColor(red:0.85, green:0.68, blue:0.51, alpha:1.0)
         navigationController?.navigationBar.tintColor = UIColor.black
         
+        self.tableView.separatorStyle = .none
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -57,8 +58,9 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
             
             cell.categoryLabel.text = "Campaign of the day"
             
-            cell.imageView?.layer.cornerRadius = 5
+            cell.customImageView.layer.cornerRadius = 5
             cell.darkView.layer.cornerRadius = 5
+            cell.customImageView.clipsToBounds = true
             
             let imageUrl = currentCampaign.image_file_url
             cell.customImageView.loadImageFromUrlString(urlString: imageUrl)
@@ -175,6 +177,7 @@ extension CampaignsViewController: UICollectionViewDelegate, UICollectionViewDat
         
         cell.darkView.layer.cornerRadius = 5
         cell.imageView.layer.cornerRadius = 5
+        cell.imageView.clipsToBounds = true
         
         let imageUrl = currentCampaign.image_file_url
         

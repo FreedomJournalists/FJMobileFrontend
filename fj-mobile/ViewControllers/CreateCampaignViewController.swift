@@ -10,6 +10,7 @@ import UIKit
 
 class CreateCampaignViewController: UIViewController {
     
+    @IBOutlet weak var darkView: UIView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var goalTextField: UITextField!
@@ -44,6 +45,10 @@ class CreateCampaignViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "New Campaign"
+        
+        self.imageView.layer.cornerRadius = 5
+        self.imageView.clipsToBounds = true
+        self.darkView.layer.cornerRadius = 5
     }
     
 }
