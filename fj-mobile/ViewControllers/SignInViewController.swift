@@ -38,13 +38,13 @@ class SignInViewController: UIViewController {
 
 //        self.keychain.delete("fjToken")
         
-        if let token = self.keychain.get("fjToken") {
-            print("GOT HERE")
-            print(token)
-            DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "campaignsSegue", sender: self)
-            }
-        }
+//        if let token = self.keychain.get("fjToken") {
+//            print("GOT HERE")
+//            print(token)
+//            DispatchQueue.main.async {
+//                self.performSegue(withIdentifier: "campaignsSegue", sender: self)
+//            }
+//        }
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {

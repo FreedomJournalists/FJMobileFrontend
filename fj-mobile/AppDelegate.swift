@@ -9,6 +9,7 @@
 import UIKit
 import UserNotifications
 import CoreData
+import KeychainSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +22,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter
             .current()
             .requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
+        let keychain = KeychainSwift()
+        if let userToken = keychain.get("fjToken") {
         
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+            let storyboard = UIStoryboard(name: "Campaigns", bundle: nil)
+        
+            let initialViewController = storyboard.instantiateInitialViewController()
+        
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
         
         application.registerForRemoteNotifications()
         
