@@ -47,10 +47,10 @@ extension ViewCampaignViewController: UITableViewDelegate, UITableViewDataSource
             
             cell.fullNameLabel.text = (self.campaign?.user.first_name)! + " " + (self.campaign?.user.last_name)!
             cell.progressLabel.text = String(Int((self.campaign!.money_raised))) + " / " + String(self.campaign!.goal)
-            if self.campaign?.user.profile_image_file_url == nil || self.campaign?.user.profile_image_file_url == "/image_files/original/missing.png" {
+            if self.campaign?.user.profile_image_file_url == "/image_files/original/missing.png" {
                 cell.profileImage.image = UIImage.init(named: "profilePlaceholder")
             } else {
-                cell.profileImage.loadImageFromUrlString(urlString: (self.campaign?.image_file_url)!)
+                cell.profileImage.loadImageFromUrlString(urlString: (self.campaign?.user.profile_image_file_url)!)
             }
             cell.profileImage.contentMode = .scaleAspectFill
             cell.profileImage.layer.cornerRadius = 5

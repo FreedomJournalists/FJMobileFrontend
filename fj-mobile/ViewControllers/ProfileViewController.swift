@@ -66,7 +66,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 380
+        return 390
     }
     
     func didClickSelectButton(cell: ProfileInfoCell) {

@@ -23,6 +23,9 @@ class ProfileInfoCell: UITableViewCell {
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    @IBAction func selectImageButton2(_ sender: Any) {
+        delegate?.didClickSelectButton(cell: self)
+    }
     @IBAction func selectImageButton(_ sender: Any) {
         delegate?.didClickSelectButton(cell: self)
     }

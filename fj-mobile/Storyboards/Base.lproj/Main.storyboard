@@ -177,20 +177,17 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="319" id="hYB-pb-6te"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="hHT-Xf-Qil" secondAttribute="trailing" id="1bu-ov-2iQ"/>
-                            <constraint firstItem="6DB-zr-tcv" firstAttribute="trailing" secondItem="Lyu-KZ-08T" secondAttribute="trailing" constant="28" id="Sgj-9v-E10"/>
+                            <constraint firstItem="6DB-zr-tcv" firstAttribute="bottom" secondItem="Lyu-KZ-08T" secondAttribute="bottom" constant="62" id="AJK-SH-QFW"/>
                             <constraint firstItem="hHT-Xf-Qil" firstAttribute="top" secondItem="nZR-KP-jHL" secondAttribute="top" id="Sgl-9e-6Tm"/>
                             <constraint firstItem="hHT-Xf-Qil" firstAttribute="bottom" secondItem="6DB-zr-tcv" secondAttribute="bottom" id="UVO-be-lmV"/>
-                            <constraint firstItem="Lyu-KZ-08T" firstAttribute="leading" secondItem="6DB-zr-tcv" secondAttribute="leading" constant="28" id="UzE-KG-QL0"/>
+                            <constraint firstItem="6DB-zr-tcv" firstAttribute="trailing" secondItem="Lyu-KZ-08T" secondAttribute="trailing" constant="28" id="cXA-aQ-DUn"/>
                             <constraint firstItem="hHT-Xf-Qil" firstAttribute="leading" secondItem="nZR-KP-jHL" secondAttribute="leading" id="oXo-h1-39H"/>
-                            <constraint firstItem="Lyu-KZ-08T" firstAttribute="top" secondItem="6DB-zr-tcv" secondAttribute="top" constant="42" id="tIs-ZI-RMu"/>
+                            <constraint firstItem="Lyu-KZ-08T" firstAttribute="leading" secondItem="6DB-zr-tcv" secondAttribute="leading" constant="28" id="vJW-W5-dyi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6DB-zr-tcv"/>
                     </view>
@@ -324,6 +321,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="q5k-iL-oKp" firstAttribute="leading" secondItem="jPu-NG-3Ov" secondAttribute="leading" constant="28" id="Eem-DQ-D2T"/>
+                            <constraint firstItem="jPu-NG-3Ov" firstAttribute="trailing" secondItem="q5k-iL-oKp" secondAttribute="trailing" constant="28" id="Nsy-dO-mT0"/>
+                            <constraint firstItem="jPu-NG-3Ov" firstAttribute="bottom" secondItem="q5k-iL-oKp" secondAttribute="bottom" constant="57.5" id="P5B-pK-eFx"/>
                             <constraint firstAttribute="trailing" secondItem="Cg9-8P-4Gz" secondAttribute="trailing" id="YpD-TT-hbT"/>
                             <constraint firstItem="jPu-NG-3Ov" firstAttribute="trailing" secondItem="q5k-iL-oKp" secondAttribute="trailing" constant="28" id="aGS-he-rDN"/>
                             <constraint firstItem="q5k-iL-oKp" firstAttribute="leading" secondItem="jPu-NG-3Ov" secondAttribute="leading" constant="28" id="cUP-ec-MrZ"/>
@@ -361,6 +361,6 @@
         <image name="underline" width="367" height="2"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8gK-9E-KPp"/>
+        <segue reference="219-ug-aUo"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,7 +14,7 @@ class User: Codable {
     var email: String
     var first_name: String
     var last_name: String
-    var profile_image_file_url: String!
+    var profile_image_file_url: String
     var token: String
     var id: Int
     

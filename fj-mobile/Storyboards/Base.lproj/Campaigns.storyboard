@@ -88,8 +88,8 @@
                                                                         </subviews>
                                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.12843860035211269" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="trailing" secondItem="cAI-6n-e3p" secondAttribute="trailing" constant="8" id="YQe-an-MDc"/>
                                                                             <constraint firstItem="cAI-6n-e3p" firstAttribute="top" secondItem="FHT-PE-zo3" secondAttribute="top" constant="8" id="eJB-ha-Ppt"/>
+                                                                            <constraint firstItem="cAI-6n-e3p" firstAttribute="leading" secondItem="FHT-PE-zo3" secondAttribute="leading" constant="8" id="fJK-kb-q5t"/>
                                                                             <constraint firstAttribute="trailing" secondItem="aRe-6Z-DBA" secondAttribute="trailing" constant="8" id="ino-LM-SZp"/>
                                                                             <constraint firstItem="aRe-6Z-DBA" firstAttribute="leading" secondItem="FHT-PE-zo3" secondAttribute="leading" constant="8" id="kNM-Kr-Ls9"/>
                                                                             <constraint firstAttribute="bottom" secondItem="aRe-6Z-DBA" secondAttribute="bottom" constant="8" id="lS1-ea-1u5"/>
@@ -165,7 +165,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="nt3-qM-c3J"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="27"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
