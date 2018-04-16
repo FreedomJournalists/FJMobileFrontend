@@ -46,6 +46,7 @@ class CreateCampaignViewController: UIViewController {
         
         self.title = "New Campaign"
         
+        self.imageView.contentMode = .scaleAspectFill
         self.imageView.layer.cornerRadius = 5
         self.imageView.clipsToBounds = true
         self.darkView.layer.cornerRadius = 5
@@ -53,8 +54,9 @@ class CreateCampaignViewController: UIViewController {
         let borderColor = UIColor(red:0.80, green:0.80, blue:0.80, alpha:1.0)
         
         self.titleTextField.layer.borderColor = borderColor.cgColor
+        self.titleTextField.layer.borderWidth = 0.5
         self.descriptionTextView.layer.borderColor = borderColor.cgColor
-        self.descriptionTextView.layer.borderWidth = 1
+        self.descriptionTextView.layer.borderWidth = 0.5
     }
     
 }
