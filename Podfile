@@ -7,5 +7,6 @@ target 'fj-mobile' do
     pod 'KeychainSwift', '~> 10.0'
     pod 'IQKeyboardManagerSwift', '~> 5.0.0'
     pod 'Alamofire', '~> 4.7'
+    pod 'Kingfisher', '~> 4.0'
 
 end

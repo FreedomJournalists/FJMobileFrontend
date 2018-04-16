@@ -9,6 +9,45 @@
 import Foundation
 import KeychainSwift
 
+enum ImageUploadRoute {
+    case campaignUpload(id: Int)
+    case userUpload(id: Int)
+    
+    func Headers() -> [String: String] {
+        let keychain = KeychainSwift()
+        let token = keychain.get("fjToken")
+        let authorization = "Bearer " + token!
+        return ["Content-Type": "application/json", "Authorization":authorization]
+    }
+    
+    func Path() -> String {
+        switch self {
+        case let .userUpload(id):
+            return "users/\(id)"
+        case let .campaignUpload(id):
+            return "campaigns/\(id)"
+        }
+    }
+    
+    func name() -> String {
+        switch self {
+        case .userUpload:
+            return "profile_image_file"
+        case .campaignUpload:
+            return "image_file"
+        }
+    }
+    
+    func fileName() -> String {
+        switch self {
+        case let .userUpload(id):
+            return "User\(String(describing: id))Image"
+        case let .campaignUpload(id):
+            return "Campaign\(String(describing: id))Image"
+        }
+    }
+}
+        
 enum Route {
     
     case postCampaign(title: String, description: String, goal: Int)

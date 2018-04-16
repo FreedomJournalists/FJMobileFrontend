@@ -10,6 +10,7 @@ import UIKit
 
 class CampaignCVCell: UICollectionViewCell {
     
+    @IBOutlet weak var darkView: UIView!
     @IBOutlet weak var imageView: CustomImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var progressLabel: UILabel!

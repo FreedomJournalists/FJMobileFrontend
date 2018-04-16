@@ -10,6 +10,7 @@ import UIKit
 
 class CreateCampaignViewController: UIViewController {
     
+    @IBOutlet weak var darkView: UIView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var goalTextField: UITextField!
@@ -21,6 +22,10 @@ class CreateCampaignViewController: UIViewController {
         }
     }
     
+    var campaignId: Int?
+    
+
+    
     @IBAction func uploadImageButton(_ sender: Any) {
         selectImage()
     }
@@ -28,10 +33,32 @@ class CreateCampaignViewController: UIViewController {
     @IBAction func postButton(_ sender: Any) {
         postCampaign {
             DispatchQueue.main.async {
-                print("DONE")
+                guard let image = self.campaignImage else {return}
+                self.uploadImage(image: image)
+                self.navigationController?.popToRootViewController(animated: true)
+                
             }
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.title = "New Campaign"
+        
+        self.imageView.contentMode = .scaleAspectFill
+        self.imageView.layer.cornerRadius = 5
+        self.imageView.clipsToBounds = true
+        self.darkView.layer.cornerRadius = 5
+        
+        let borderColor = UIColor(red:0.80, green:0.80, blue:0.80, alpha:1.0)
+        
+        self.titleTextField.layer.borderColor = borderColor.cgColor
+        self.titleTextField.layer.borderWidth = 0.5
+        self.descriptionTextView.layer.borderColor = borderColor.cgColor
+        self.descriptionTextView.layer.borderWidth = 0.5
+    }
+    
 }
 
 extension CreateCampaignViewController {
@@ -48,9 +75,18 @@ extension CreateCampaignViewController {
 //        UIImagePNGRepresentation(image)?.write(to: filePath)
         
         Network.instance.fetch(route: .postCampaign(title: title, description: description, goal: goal)) { (data, resp) in
-            print("done \(resp)")
+            let jsonCampaign = try? JSONDecoder().decode(Campaign.self, from: data)
+            if let campaign = jsonCampaign {
+                self.campaignId = campaign.id
             completion()
+            }
         }
+    }
+    
+    func uploadImage(image: UIImage) {
+        guard let imageData = UIImageJPEGRepresentation(image, 1)
+            else {return}
+        Network.instance.imageUpload(route: .campaignUpload(id: self.campaignId!), imageData: imageData)
     }
 }
 

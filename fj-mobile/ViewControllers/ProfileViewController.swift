@@ -7,23 +7,29 @@
 //
 
 import UIKit
+import KeychainSwift
 
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ImageSelectionDelegate {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UserProfileDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
     var currentCell: ProfileInfoCell?
     var user: User?
     
+    let keychain = KeychainSwift()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Profile"
         
         tableView.delegate = self
         tableView.dataSource = self
         
         loadUser {
             DispatchQueue.main.async {
-                print("USER: \(self.user!.profile_image_file_url)")
+                print("USERIMAGE: \(self.user!.profile_image_file_url)")
+                print("TOKEN: \(self.user!.token)")
                 self.tableView.reloadData()
             }
         }
@@ -40,11 +46,19 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.selectionStyle = .none
         guard let user = self.user else {return cell}
         
+        cell.profileImageView.contentMode = .scaleAspectFill
+        cell.profileImageView.layer.cornerRadius = 5
+        cell.profileImageView.clipsToBounds = true
+        
         cell.emailLabel.text = user.email
         cell.firstNameLabel.text = user.first_name
         cell.lastNameLabel.text = user.last_name
         cell.nicknameLabel.text = user.nickname
-        cell.profileImageView.loadImageFromUrlString(urlString: user.profile_image_file_url)
+        if self.user?.profile_image_file_url == nil || (self.user?.profile_image_file_url)! == "/profile_image_files/original/missing.png" {
+            cell.profileImageView.image = UIImage.init(named: "profilePlaceholder")
+        } else {
+            cell.profileImageView.loadImageFromUrlString(urlString: (self.user?.profile_image_file_url)!)
+        }
         
         cell.delegate = self
         
@@ -52,12 +66,24 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 380
+        return 390
     }
     
     func didClickSelectButton(cell: ProfileInfoCell) {
         self.currentCell = cell
         selectImage()
+    }
+    
+    func uploadImage(image: UIImage) {
+        guard let imageData = UIImageJPEGRepresentation(image, 1)
+            else {return}
+        Network.instance.imageUpload(route: .userUpload(id: (self.user?.id)!), imageData: imageData)
+    }
+    
+    func didClickLogOut(cell: ProfileInfoCell) {
+        print("clicked")
+        self.keychain.delete("fjToken")
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -68,7 +94,7 @@ extension ProfileViewController {
             let jsonUser = try? JSONDecoder().decode(User.self, from: data)
             if let user = jsonUser {
                 self.user = user
-                
+                print("TOKEN: \(user.token)")
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -108,6 +134,7 @@ extension ProfileViewController:  UIImagePickerControllerDelegate, UINavigationC
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         self.currentCell?.profileImageView.image = image
+        self.uploadImage(image: image)
         
         picker.dismiss(animated: true, completion: nil)
     }

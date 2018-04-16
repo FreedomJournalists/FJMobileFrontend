@@ -30,8 +30,14 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         self.model = generateRandomData()
         
+//        Navigation bar setup
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.85, green:0.68, blue:0.51, alpha:1.0)
+        navigationController?.navigationBar.tintColor = UIColor.black
+        
+        self.tableView.separatorStyle = .none
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
         
         self.loadCampaigns {
             DispatchQueue.main.async {
@@ -52,6 +58,12 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
             let currentCampaign = self.campaigns[0]
             
             cell.categoryLabel.text = "Campaign of the day"
+            
+            cell.darkView.layer.cornerRadius = 5
+            
+            cell.customImageView.contentMode = .scaleAspectFill
+            cell.customImageView.layer.cornerRadius = 5
+            cell.customImageView.clipsToBounds = true
             
             let imageUrl = currentCampaign.image_file_url
             cell.customImageView.loadImageFromUrlString(urlString: imageUrl)
@@ -165,6 +177,11 @@ extension CampaignsViewController: UICollectionViewDelegate, UICollectionViewDat
         
         cell.progressLabel.text = String(Int(currentCampaign.money_raised)) + " / " + String(currentCampaign.goal)
         cell.progressLabel.sizeToFit()
+        
+        cell.darkView.layer.cornerRadius = 5
+        cell.imageView.contentMode = .scaleAspectFill
+        cell.imageView.layer.cornerRadius = 5
+        cell.imageView.clipsToBounds = true
         
         let imageUrl = currentCampaign.image_file_url
         

@@ -12,13 +12,21 @@ class ViewCampaignViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var campaign: Campaign?
-    var secondCellHeight: CGFloat = 0
+    var secondCellHeight: CGFloat = 0 {
+        didSet {
+            if secondCellHeight < 301 {
+                secondCellHeight = 301
+            }
+        }
+    }
     
     @IBAction func contributeButton(_ sender: Any) {
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Campaign"
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -37,9 +45,16 @@ extension ViewCampaignViewController: UITableViewDelegate, UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: "campaignUserCell", for: indexPath) as! CampaignUserCell
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             
-            cell.fullNameLabel.text = "Full Name"
+            cell.fullNameLabel.text = (self.campaign?.user.first_name)! + " " + (self.campaign?.user.last_name)!
             cell.progressLabel.text = String(Int((self.campaign!.money_raised))) + " / " + String(self.campaign!.goal)
-            //            cell.profileImage.loadImageFromUrlString(urlString: )
+            if self.campaign?.user.profile_image_file_url == "/image_files/original/missing.png" {
+                cell.profileImage.image = UIImage.init(named: "profilePlaceholder")
+            } else {
+                cell.profileImage.loadImageFromUrlString(urlString: (self.campaign?.user.profile_image_file_url)!)
+            }
+            cell.profileImage.contentMode = .scaleAspectFill
+            cell.profileImage.layer.cornerRadius = 5
+            cell.profileImage.clipsToBounds = true
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "campaignDescriptionCell", for: indexPath) as! CampaignDescriptionCell
