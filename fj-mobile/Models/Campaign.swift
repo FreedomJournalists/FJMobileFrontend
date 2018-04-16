@@ -16,7 +16,7 @@ class Campaign: Codable {
     var money_raised: Float
     var goal: Int
     var image_file_url: String
-//    var user: User
+    var user: User
     
     
     init(title: String, description: String, moneyRaised: Float, goal: Int, imageUrlString: String, id: Int, user: User) {
@@ -26,7 +26,7 @@ class Campaign: Codable {
         self.goal = goal
         self.image_file_url = imageUrlString
         self.id = id
-//        self.user = user
+        self.user = user
     }
     
 }

@@ -35,7 +35,7 @@ class CreateCampaignViewController: UIViewController {
             DispatchQueue.main.async {
                 guard let image = self.campaignImage else {return}
                 self.uploadImage(image: image)
-                self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popToRootViewController(animated: true)
                 
             }
         }
@@ -49,6 +49,12 @@ class CreateCampaignViewController: UIViewController {
         self.imageView.layer.cornerRadius = 5
         self.imageView.clipsToBounds = true
         self.darkView.layer.cornerRadius = 5
+        
+        let borderColor = UIColor(red:0.80, green:0.80, blue:0.80, alpha:1.0)
+        
+        self.titleTextField.layer.borderColor = borderColor.cgColor
+        self.descriptionTextView.layer.borderColor = borderColor.cgColor
+        self.descriptionTextView.layer.borderWidth = 1
     }
     
 }

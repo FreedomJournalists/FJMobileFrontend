@@ -38,6 +38,7 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        
         self.loadCampaigns {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -58,8 +59,10 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
             
             cell.categoryLabel.text = "Campaign of the day"
             
-            cell.customImageView.layer.cornerRadius = 5
             cell.darkView.layer.cornerRadius = 5
+            
+            cell.customImageView.contentMode = .scaleAspectFill
+            cell.customImageView.layer.cornerRadius = 5
             cell.customImageView.clipsToBounds = true
             
             let imageUrl = currentCampaign.image_file_url
@@ -176,6 +179,7 @@ extension CampaignsViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.progressLabel.sizeToFit()
         
         cell.darkView.layer.cornerRadius = 5
+        cell.imageView.contentMode = .scaleAspectFill
         cell.imageView.layer.cornerRadius = 5
         cell.imageView.clipsToBounds = true
         

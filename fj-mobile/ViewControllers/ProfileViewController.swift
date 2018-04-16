@@ -46,11 +46,19 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.selectionStyle = .none
         guard let user = self.user else {return cell}
         
+        cell.profileImageView.contentMode = .scaleAspectFill
+        cell.profileImageView.layer.cornerRadius = 5
+        cell.profileImageView.clipsToBounds = true
+        
         cell.emailLabel.text = user.email
         cell.firstNameLabel.text = user.first_name
         cell.lastNameLabel.text = user.last_name
         cell.nicknameLabel.text = user.nickname
-        cell.profileImageView.loadImageFromUrlString(urlString: user.profile_image_file_url)
+        if self.user?.profile_image_file_url == nil || (self.user?.profile_image_file_url)! == "/profile_image_files/original/missing.png" {
+            cell.profileImageView.image = UIImage.init(named: "profilePlaceholder")
+        } else {
+            cell.profileImageView.loadImageFromUrlString(urlString: (self.user?.profile_image_file_url)!)
+        }
         
         cell.delegate = self
         
