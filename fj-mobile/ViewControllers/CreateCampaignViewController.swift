@@ -8,13 +8,15 @@
 
 import UIKit
 
-class CreateCampaignViewController: UIViewController {
+class CreateCampaignViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var darkView: UIView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var goalTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
+    
+    let borderColor = UIColor(red:0.80, green:0.80, blue:0.80, alpha:1.0)
     
     var campaignImage: UIImage? {
         didSet {
@@ -24,7 +26,6 @@ class CreateCampaignViewController: UIViewController {
     
     var campaignId: Int?
     
-
     
     @IBAction func uploadImageButton(_ sender: Any) {
         selectImage()
@@ -44,6 +45,13 @@ class CreateCampaignViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignInViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+        
         self.title = "New Campaign"
         
         self.imageView.contentMode = .scaleAspectFill
@@ -51,14 +59,50 @@ class CreateCampaignViewController: UIViewController {
         self.imageView.clipsToBounds = true
         self.darkView.layer.cornerRadius = 5
         
-        let borderColor = UIColor(red:0.80, green:0.80, blue:0.80, alpha:1.0)
         
-        self.titleTextField.layer.borderColor = borderColor.cgColor
-        self.titleTextField.layer.borderWidth = 0.5
+//        self.titleTextField.layer.borderColor = borderColor.cgColor
+//        self.titleTextField.layer.borderWidth = 0.5
+
         self.descriptionTextView.layer.borderColor = borderColor.cgColor
         self.descriptionTextView.layer.borderWidth = 0.5
+        self.descriptionTextView.layer.cornerRadius = 5
+        
+        self.descriptionTextView.delegate = self
+        self.descriptionTextView.text = "Description"
+        self.descriptionTextView.textColor = borderColor
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        print("Hello")
+        if textView.textColor == borderColor {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        print("GoodBye")
+        if textView.text.isEmpty {
+            textView.text = "Description"
+            textView.textColor = borderColor
+        }
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= 180
+            }
+//        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += 180
+            }
+//        }
+    }
 }
 
 extension CreateCampaignViewController {
@@ -127,5 +171,17 @@ extension CreateCampaignViewController:  UIImagePickerControllerDelegate, UINavi
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension CreateCampaignViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterUserViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

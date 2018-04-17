@@ -35,7 +35,9 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Select photo for your campaign</string>
+	<string>FreedomJournalism needs access to your photo library in order to select an image</string>
+	<key>NSCameraUsageDescription</key>
+	<string>FreedomJournalism needs access to your camera in order to select an image</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
