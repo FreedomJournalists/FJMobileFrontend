@@ -47,8 +47,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="300.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1v-a8-rd3">
+                                                    <rect key="frame" x="15" y="11" width="353" height="33"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0Uu-1R-s24">
-                                                    <rect key="frame" x="0.0" y="25" width="375" height="276"/>
+                                                    <rect key="frame" x="0.0" y="44" width="375" height="235"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XId-nl-mga">
                                                         <size key="itemSize" width="150" height="220"/>
@@ -58,7 +64,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="campaignCVCell" reuseIdentifier="campaignCVCell" id="mja-Rv-NsY" customClass="CampaignCVCell" customModule="fj_mobile" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="28" width="150" height="220"/>
+                                                            <rect key="frame" x="10" y="7.5" width="150" height="220"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="220"/>
@@ -72,9 +78,6 @@
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAI-6n-e3p">
                                                                                 <rect key="frame" x="8" y="8" width="134" height="23.5"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="width" constant="134" id="cAU-YK-3jo"/>
-                                                                                </constraints>
                                                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                 <nil key="highlightedColor"/>
@@ -88,6 +91,8 @@
                                                                         </subviews>
                                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.12843860035211269" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="cAI-6n-e3p" secondAttribute="trailing" constant="8" id="Ua0-r1-UzE"/>
+                                                                            <constraint firstItem="aRe-6Z-DBA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cAI-6n-e3p" secondAttribute="bottom" constant="10" id="cXh-t8-1cV"/>
                                                                             <constraint firstItem="cAI-6n-e3p" firstAttribute="top" secondItem="FHT-PE-zo3" secondAttribute="top" constant="8" id="eJB-ha-Ppt"/>
                                                                             <constraint firstItem="cAI-6n-e3p" firstAttribute="leading" secondItem="FHT-PE-zo3" secondAttribute="leading" constant="8" id="fJK-kb-q5t"/>
                                                                             <constraint firstAttribute="trailing" secondItem="aRe-6Z-DBA" secondAttribute="trailing" constant="8" id="ino-LM-SZp"/>
@@ -116,24 +121,15 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1v-a8-rd3">
-                                                    <rect key="frame" x="15" y="11" width="345" height="38"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="38" id="L7j-XT-YTs"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="0Uu-1R-s24" secondAttribute="trailing" id="31m-UI-Lhl"/>
                                                 <constraint firstItem="u1v-a8-rd3" firstAttribute="top" secondItem="7oL-Uh-osv" secondAttribute="topMargin" id="5fO-3z-Rkq"/>
-                                                <constraint firstItem="u1v-a8-rd3" firstAttribute="centerX" secondItem="7oL-Uh-osv" secondAttribute="centerX" id="EkQ-Nd-o3a"/>
                                                 <constraint firstItem="u1v-a8-rd3" firstAttribute="leading" secondItem="7oL-Uh-osv" secondAttribute="leadingMargin" id="F9N-Yg-czj"/>
-                                                <constraint firstItem="0Uu-1R-s24" firstAttribute="top" secondItem="7oL-Uh-osv" secondAttribute="topMargin" constant="14" id="H3X-9X-l0x"/>
+                                                <constraint firstItem="u1v-a8-rd3" firstAttribute="bottom" secondItem="0Uu-1R-s24" secondAttribute="top" id="RS0-yK-sAx"/>
+                                                <constraint firstItem="u1v-a8-rd3" firstAttribute="trailing" secondItem="7oL-Uh-osv" secondAttribute="trailingMargin" constant="8" id="TiE-Si-kUd"/>
                                                 <constraint firstItem="0Uu-1R-s24" firstAttribute="leading" secondItem="7oL-Uh-osv" secondAttribute="leading" id="f7G-1e-31J"/>
-                                                <constraint firstItem="u1v-a8-rd3" firstAttribute="centerX" secondItem="0Uu-1R-s24" secondAttribute="centerX" id="gKG-aG-jIG"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="0Uu-1R-s24" secondAttribute="bottom" constant="-11" id="nev-k3-VYY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="0Uu-1R-s24" secondAttribute="bottom" constant="11" id="nev-k3-VYY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

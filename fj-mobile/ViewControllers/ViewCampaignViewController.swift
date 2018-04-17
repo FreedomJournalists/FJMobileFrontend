@@ -21,6 +21,7 @@ class ViewCampaignViewController: UIViewController {
     }
     
     @IBAction func contributeButton(_ sender: Any) {
+        performSegue(withIdentifier: "donateSegue", sender: sender)
     }
     
     override func viewDidLoad() {
@@ -55,6 +56,8 @@ extension ViewCampaignViewController: UITableViewDelegate, UITableViewDataSource
             cell.profileImage.contentMode = .scaleAspectFill
             cell.profileImage.layer.cornerRadius = 5
             cell.profileImage.clipsToBounds = true
+            
+            cell.delegate = self
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "campaignDescriptionCell", for: indexPath) as! CampaignDescriptionCell
@@ -77,5 +80,27 @@ extension ViewCampaignViewController: UITableViewDelegate, UITableViewDataSource
             return self.secondCellHeight
         }
     }
+}
 
+extension ViewCampaignViewController: CampaignUserCellDelegate {
+    func twitterButtonClicked(cell: CampaignUserCell) {
+        displaySocialMediaAlert()
+    }
+    
+    func facebookButtonClicked(cell: CampaignUserCell) {
+        displaySocialMediaAlert()
+    }
+    
+    func instagramButtonClicked(cell: CampaignUserCell) {
+        displaySocialMediaAlert()
+    }
+    
+    func displaySocialMediaAlert() {
+        let alert = UIAlertController(title: "Unavailable", message: "Social media validation has not yet been enabled", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
 }

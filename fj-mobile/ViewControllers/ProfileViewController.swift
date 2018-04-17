@@ -54,6 +54,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.firstNameLabel.text = user.first_name
         cell.lastNameLabel.text = user.last_name
         cell.nicknameLabel.text = user.nickname
+        
         if self.user?.profile_image_file_url == nil || (self.user?.profile_image_file_url)! == "/profile_image_files/original/missing.png" {
             cell.profileImageView.image = UIImage.init(named: "profilePlaceholder")
         } else {
@@ -66,7 +67,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 390
+        return 450
     }
     
     func didClickSelectButton(cell: ProfileInfoCell) {

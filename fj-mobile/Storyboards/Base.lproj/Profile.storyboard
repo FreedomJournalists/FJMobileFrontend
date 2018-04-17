@@ -101,14 +101,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1b-ZA-Dui">
-                                                    <rect key="frame" x="296" y="364" width="64" height="36"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                                    <state key="normal" title="Log Out"/>
-                                                    <connections>
-                                                        <action selector="logOutButton:" destination="4V0-gz-0xz" eventType="touchUpInside" id="IHK-We-n4h"/>
-                                                    </connections>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4J-zC-UnL" userLabel="selectImage2">
                                                     <rect key="frame" x="107" y="11" width="160" height="160"/>
                                                     <constraints>
@@ -116,6 +108,14 @@
                                                     </constraints>
                                                     <connections>
                                                         <action selector="selectImageButton2:" destination="4V0-gz-0xz" eventType="touchUpInside" id="GpT-2H-aBv"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1b-ZA-Dui">
+                                                    <rect key="frame" x="296" y="364" width="64" height="36"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                    <state key="normal" title="Log Out"/>
+                                                    <connections>
+                                                        <action selector="logOutButton:" destination="4V0-gz-0xz" eventType="touchUpInside" id="IHK-We-n4h"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -136,6 +136,7 @@
                                                 <constraint firstItem="K4J-zC-UnL" firstAttribute="top" secondItem="h8q-Cl-8GC" secondAttribute="topMargin" id="dqq-1P-Yd4"/>
                                                 <constraint firstItem="Tbs-EH-3Ho" firstAttribute="top" secondItem="Thb-vW-p3i" secondAttribute="bottom" constant="12" id="ePb-Pn-KwP"/>
                                                 <constraint firstItem="3MS-vf-uYa" firstAttribute="top" secondItem="zUh-OZ-Swr" secondAttribute="bottom" constant="52" id="ekb-W2-H1L"/>
+                                                <constraint firstItem="m1b-ZA-Dui" firstAttribute="bottom" secondItem="h8q-Cl-8GC" secondAttribute="bottomMargin" id="gMK-6E-pVA"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="zUh-OZ-Swr" secondAttribute="trailing" constant="93" id="iLT-tZ-iu0"/>
                                                 <constraint firstItem="Tbs-EH-3Ho" firstAttribute="leading" secondItem="e40-Sd-rPI" secondAttribute="trailing" constant="32" id="ju5-a9-4oq"/>
                                                 <constraint firstItem="zzt-jI-vLg" firstAttribute="top" secondItem="zUh-OZ-Swr" secondAttribute="bottom" constant="8" id="kEE-DS-sEr"/>
@@ -144,6 +145,7 @@
                                                 <constraint firstItem="XBS-Zz-pFI" firstAttribute="leading" secondItem="h8q-Cl-8GC" secondAttribute="leadingMargin" id="pbd-1G-AV1"/>
                                                 <constraint firstItem="XBS-Zz-pFI" firstAttribute="top" secondItem="3MS-vf-uYa" secondAttribute="bottom" constant="12.5" id="qoH-3H-m8V"/>
                                                 <constraint firstItem="zUh-OZ-Swr" firstAttribute="leading" secondItem="h8q-Cl-8GC" secondAttribute="leadingMargin" constant="92" id="sJX-vJ-CTF"/>
+                                                <constraint firstItem="m1b-ZA-Dui" firstAttribute="trailing" secondItem="h8q-Cl-8GC" secondAttribute="trailingMargin" id="sUQ-Pv-vNi"/>
                                                 <constraint firstItem="3MS-vf-uYa" firstAttribute="leading" secondItem="h8q-Cl-8GC" secondAttribute="leadingMargin" id="txS-d4-Bmc"/>
                                                 <constraint firstItem="m1b-ZA-Dui" firstAttribute="trailing" secondItem="h8q-Cl-8GC" secondAttribute="trailingMargin" id="uNv-iZ-uON"/>
                                                 <constraint firstItem="zUh-OZ-Swr" firstAttribute="top" secondItem="h8q-Cl-8GC" secondAttribute="topMargin" id="vS2-FS-7Eh"/>

@@ -68,7 +68,7 @@ class CreateCampaignViewController: UIViewController, UITextViewDelegate {
         self.descriptionTextView.layer.cornerRadius = 5
         
         self.descriptionTextView.delegate = self
-        self.descriptionTextView.text = "Description"
+        self.descriptionTextView.text = " Description"
         self.descriptionTextView.textColor = borderColor
     }
     
@@ -83,7 +83,7 @@ class CreateCampaignViewController: UIViewController, UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         print("GoodBye")
         if textView.text.isEmpty {
-            textView.text = "Description"
+            textView.text = " Description"
             textView.textColor = borderColor
         }
     }

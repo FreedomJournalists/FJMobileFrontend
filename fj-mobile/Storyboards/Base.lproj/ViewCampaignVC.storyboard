@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +27,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sMn-X6-JKQ">
-                                <rect key="frame" x="0.0" y="44" width="375" height="536"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="campaignUserCell" rowHeight="156" id="emi-6Z-nio" userLabel="campaignUserCell" customClass="CampaignUserCell" customModule="fj_mobile" customModuleProvider="target">
@@ -58,16 +59,52 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNG-VE-tEe">
+                                                    <rect key="frame" x="166" y="51" width="42" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="gNG-VE-tEe" secondAttribute="height" multiplier="1:1" id="LAs-Ev-AJB"/>
+                                                    </constraints>
+                                                    <state key="normal" image="instagramIcon"/>
+                                                    <connections>
+                                                        <action selector="instagramButton:" destination="emi-6Z-nio" eventType="touchUpInside" id="QQG-qg-Mbi"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWz-eP-JPM">
+                                                    <rect key="frame" x="223" y="54" width="36" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="EWz-eP-JPM" secondAttribute="height" multiplier="1:1" id="FGZ-ak-lD4"/>
+                                                    </constraints>
+                                                    <state key="normal" image="facebookIcon"/>
+                                                    <connections>
+                                                        <action selector="facebookButton:" destination="emi-6Z-nio" eventType="touchUpInside" id="K0m-fH-5s5"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLK-QL-Non">
+                                                    <rect key="frame" x="278" y="53" width="38" height="38"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="CLK-QL-Non" secondAttribute="height" multiplier="1:1" id="mDS-8I-R8T"/>
+                                                    </constraints>
+                                                    <state key="normal" image="twitterIcon"/>
+                                                    <connections>
+                                                        <action selector="twitterButton:" destination="emi-6Z-nio" eventType="touchUpInside" id="31Q-QE-tXZ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="CLK-QL-Non" firstAttribute="top" secondItem="NJK-tS-OhF" secondAttribute="bottom" constant="10" id="3T3-UJ-4By"/>
                                                 <constraint firstItem="xIR-gZ-103" firstAttribute="leading" secondItem="gUY-2G-nGu" secondAttribute="trailing" constant="23" id="Ab1-hi-XFU"/>
                                                 <constraint firstItem="NJK-tS-OhF" firstAttribute="top" secondItem="dm1-pH-gEh" secondAttribute="topMargin" id="LxM-Rk-ITv"/>
+                                                <constraint firstItem="EWz-eP-JPM" firstAttribute="top" secondItem="NJK-tS-OhF" secondAttribute="bottom" constant="11" id="R5L-zg-eU7"/>
+                                                <constraint firstItem="gNG-VE-tEe" firstAttribute="top" secondItem="NJK-tS-OhF" secondAttribute="bottom" constant="8" id="WxO-VO-DoT"/>
                                                 <constraint firstItem="NJK-tS-OhF" firstAttribute="leading" secondItem="gUY-2G-nGu" secondAttribute="trailing" constant="22" id="cnT-w2-CUT"/>
                                                 <constraint firstAttribute="bottom" secondItem="gUY-2G-nGu" secondAttribute="bottom" constant="16.5" id="dN7-1l-0zf"/>
                                                 <constraint firstItem="gUY-2G-nGu" firstAttribute="top" secondItem="dm1-pH-gEh" secondAttribute="top" constant="11" id="dTs-Pj-aHX"/>
                                                 <constraint firstItem="gUY-2G-nGu" firstAttribute="leading" secondItem="dm1-pH-gEh" secondAttribute="leading" constant="14" id="gQR-1j-f44"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="xIR-gZ-103" secondAttribute="bottom" constant="6" id="lX3-qv-RAK"/>
+                                                <constraint firstItem="gNG-VE-tEe" firstAttribute="leading" secondItem="gUY-2G-nGu" secondAttribute="trailing" constant="23" id="oah-h7-pLB"/>
+                                                <constraint firstItem="EWz-eP-JPM" firstAttribute="leading" secondItem="gNG-VE-tEe" secondAttribute="trailing" constant="15" id="ool-5x-3DW"/>
                                                 <constraint firstItem="NJK-tS-OhF" firstAttribute="trailing" secondItem="dm1-pH-gEh" secondAttribute="trailingMargin" id="qtx-oh-fdX"/>
+                                                <constraint firstItem="CLK-QL-Non" firstAttribute="leading" secondItem="EWz-eP-JPM" secondAttribute="trailing" constant="19" id="ruv-kp-hh7"/>
                                                 <constraint firstItem="xIR-gZ-103" firstAttribute="trailing" secondItem="dm1-pH-gEh" secondAttribute="trailingMargin" id="vta-8i-ZXU"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -116,14 +153,11 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMv-uL-Xub">
-                                <rect key="frame" x="22" y="588" width="331" height="59"/>
+                                <rect key="frame" x="22" y="587" width="331" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="331" id="Q1W-wF-rVu"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="59" id="WuM-f3-GoW"/>
-                                    <constraint firstAttribute="width" constant="331" id="iEq-ZI-JU4"/>
-                                    <constraint firstAttribute="height" constant="59" id="j0B-O5-MCG"/>
+                                    <constraint firstAttribute="width" secondItem="UMv-uL-Xub" secondAttribute="height" multiplier="370:67" id="otc-78-xbF"/>
                                 </constraints>
-                                <state key="normal" image="ContributeButton"/>
+                                <state key="normal" image="contributeButton"/>
                                 <connections>
                                     <action selector="contributeButton:" destination="XZ8-d7-BPk" eventType="touchUpInside" id="VwB-I3-RXC"/>
                                 </connections>
@@ -131,32 +165,44 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8kG-XX-rem" firstAttribute="bottom" secondItem="UMv-uL-Xub" secondAttribute="bottom" constant="20" id="18K-Bu-ElP"/>
                             <constraint firstItem="sMn-X6-JKQ" firstAttribute="top" secondItem="CWy-CL-rgF" secondAttribute="bottom" id="2Jt-bc-8Uu"/>
-                            <constraint firstItem="UMv-uL-Xub" firstAttribute="leading" secondItem="8kG-XX-rem" secondAttribute="leading" constant="22" id="Df0-pY-WhW"/>
+                            <constraint firstItem="8kG-XX-rem" firstAttribute="trailing" secondItem="UMv-uL-Xub" secondAttribute="trailing" constant="22" id="ASK-Za-Fa8"/>
                             <constraint firstItem="CWy-CL-rgF" firstAttribute="top" secondItem="Rqg-YD-Mfm" secondAttribute="top" id="Teq-Sb-Nn9"/>
                             <constraint firstItem="sMn-X6-JKQ" firstAttribute="trailing" secondItem="8kG-XX-rem" secondAttribute="trailing" id="U6h-GQ-50P"/>
+                            <constraint firstItem="UMv-uL-Xub" firstAttribute="leading" secondItem="Rqg-YD-Mfm" secondAttribute="leading" constant="22" id="a8o-s5-Jww"/>
                             <constraint firstItem="sMn-X6-JKQ" firstAttribute="top" secondItem="CWy-CL-rgF" secondAttribute="bottom" id="cGF-VO-D2X"/>
+                            <constraint firstItem="8kG-XX-rem" firstAttribute="bottom" secondItem="UMv-uL-Xub" secondAttribute="bottom" constant="20" id="cPh-X8-M5b"/>
                             <constraint firstItem="CWy-CL-rgF" firstAttribute="trailing" secondItem="8kG-XX-rem" secondAttribute="trailing" id="cZH-Z7-Nbp"/>
                             <constraint firstItem="CWy-CL-rgF" firstAttribute="leading" secondItem="8kG-XX-rem" secondAttribute="leading" id="cdL-5K-w1a"/>
                             <constraint firstItem="sMn-X6-JKQ" firstAttribute="leading" secondItem="8kG-XX-rem" secondAttribute="leading" id="eW3-cm-Tez"/>
-                            <constraint firstItem="UMv-uL-Xub" firstAttribute="top" secondItem="sMn-X6-JKQ" secondAttribute="bottom" constant="8" id="kEo-Rl-Y9B"/>
+                            <constraint firstItem="UMv-uL-Xub" firstAttribute="top" secondItem="sMn-X6-JKQ" secondAttribute="bottom" constant="24" id="it2-hk-nki"/>
                             <constraint firstItem="sMn-X6-JKQ" firstAttribute="leading" secondItem="8kG-XX-rem" secondAttribute="leading" id="vOq-9L-UJO"/>
-                            <constraint firstItem="8kG-XX-rem" firstAttribute="trailing" secondItem="UMv-uL-Xub" secondAttribute="trailing" constant="22" id="wMX-QR-ppO"/>
                             <constraint firstItem="sMn-X6-JKQ" firstAttribute="trailing" secondItem="8kG-XX-rem" secondAttribute="trailing" id="zma-73-eUy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8kG-XX-rem"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="sMn-X6-JKQ" id="dV0-le-HoO"/>
+                        <segue destination="Zka-Oo-j5V" kind="show" identifier="donateSegue" id="Qm8-2P-cFW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsM-1W-cc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2824.8000000000002" y="-369.26536731634184"/>
         </scene>
+        <!--Donate-->
+        <scene sceneID="yAh-8b-Y1a">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Donate" id="Zka-Oo-j5V" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="csb-6H-k6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3862" y="-446"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="ContributeButton" width="370" height="67"/>
+        <image name="contributeButton" width="331" height="59"/>
+        <image name="facebookIcon" width="36" height="36"/>
+        <image name="instagramIcon" width="42" height="42"/>
+        <image name="twitterIcon" width="38" height="38"/>
     </resources>
 </document>

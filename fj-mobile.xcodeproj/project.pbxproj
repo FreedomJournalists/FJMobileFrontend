@@ -10,6 +10,8 @@
 		4809ED6E205DE9EA00583127 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809ED6D205DE9EA00583127 /* SignInViewController.swift */; };
 		480D4F3F20606C8200AFCE13 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D4F3E20606C8200AFCE13 /* Networking.swift */; };
 		480D4F412060724400AFCE13 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D4F402060724400AFCE13 /* Routes.swift */; };
+		481232EF208682A50083AA5E /* Donate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 481232EE208682A50083AA5E /* Donate.storyboard */; };
+		481232F1208682DF0083AA5E /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481232F0208682DF0083AA5E /* DonateViewController.swift */; };
 		4813EA1A206D8A3200E3DC33 /* ViewCampaignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4813EA19206D8A3200E3DC33 /* ViewCampaignViewController.swift */; };
 		48216A93207BF48900EE6EBD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48216A92207BF48900EE6EBD /* ProfileViewController.swift */; };
 		48216A98207BF9FD00EE6EBD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48216A94207BF9FD00EE6EBD /* Profile.storyboard */; };
@@ -64,6 +66,8 @@
 		480D4F3D2060625400AFCE13 /* fj-mobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "fj-mobile.entitlements"; sourceTree = "<group>"; };
 		480D4F3E20606C8200AFCE13 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		480D4F402060724400AFCE13 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		481232EE208682A50083AA5E /* Donate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Donate.storyboard; sourceTree = "<group>"; };
+		481232F0208682DF0083AA5E /* DonateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
 		4813EA19206D8A3200E3DC33 /* ViewCampaignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCampaignViewController.swift; sourceTree = "<group>"; };
 		48216A92207BF48900EE6EBD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		48216A95207BF9FD00EE6EBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 				48216A9C207BFA1F00EE6EBD /* CreateCampaign.storyboard */,
 				48216A94207BF9FD00EE6EBD /* Profile.storyboard */,
 				48216A96207BF9FD00EE6EBD /* ViewCampaignVC.storyboard */,
+				481232EE208682A50083AA5E /* Donate.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				48216A92207BF48900EE6EBD /* ProfileViewController.swift */,
 				4891673C20603D2B00F94744 /* CreateCampaignViewController.swift */,
 				4813EA19206D8A3200E3DC33 /* ViewCampaignViewController.swift */,
+				481232F0208682DF0083AA5E /* DonateViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -416,6 +422,7 @@
 				48216A98207BF9FD00EE6EBD /* Profile.storyboard in Resources */,
 				48B49F03205C744400B1AA8B /* LaunchScreen.storyboard in Resources */,
 				48216A99207BF9FD00EE6EBD /* ViewCampaignVC.storyboard in Resources */,
+				481232EF208682A50083AA5E /* Donate.storyboard in Resources */,
 				48B49F00205C744400B1AA8B /* Assets.xcassets in Resources */,
 				48216A9E207BFA1F00EE6EBD /* Campaigns.storyboard in Resources */,
 				48B49EFE205C744400B1AA8B /* Main.storyboard in Resources */,
@@ -504,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECCE5541206B03750097F9B8 /* RegisterUserViewController.swift in Sources */,
+				481232F1208682DF0083AA5E /* DonateViewController.swift in Sources */,
 				486BA068205DD3D900FAC959 /* CampaignsViewController.swift in Sources */,
 				4881478B206AFB57004C6FA0 /* CustomImageView.swift in Sources */,
 				482561E22065AADD0081BDFD /* FeaturedCampaignCell.swift in Sources */,

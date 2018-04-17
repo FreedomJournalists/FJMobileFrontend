@@ -173,10 +173,10 @@ extension CampaignsViewController: UICollectionViewDelegate, UICollectionViewDat
         let currentCampaign = self.campaigns[indexPath.row + 1]
         
         cell.titleLabel.text = currentCampaign.title
-        cell.titleLabel.sizeToFit()
+//        cell.titleLabel.sizeToFit()
         
         cell.progressLabel.text = String(Int(currentCampaign.money_raised)) + " / " + String(currentCampaign.goal)
-        cell.progressLabel.sizeToFit()
+//        cell.progressLabel.sizeToFit()
         
         cell.darkView.layer.cornerRadius = 5
         cell.imageView.contentMode = .scaleAspectFill

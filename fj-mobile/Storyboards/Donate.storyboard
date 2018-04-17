@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ath-be-sBM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--DonateVC-->
+        <scene sceneID="6Tf-EH-GVB">
+            <objects>
+                <viewController id="ath-be-sBM" userLabel="DonateVC" customClass="DonateViewController" customModule="fj_mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DW5-LS-Hb9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUW-tL-Tc2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Donate" id="eCO-81-fvY"/>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u4r-xh-onM">
+                                <rect key="frame" x="33" y="108" width="309" height="32"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/YY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sky-Dz-Sqd">
+                                <rect key="frame" x="33" y="158" width="309" height="32"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9s4-Gx-VDv">
+                                <rect key="frame" x="33" y="258" width="309" height="32"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVC" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rSG-9f-QFr">
+                                <rect key="frame" x="33" y="208" width="309" height="32"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQQ-SE-HMF">
+                                <rect key="frame" x="22" y="586" width="331" height="59"/>
+                                <state key="normal" image="sendButton"/>
+                                <connections>
+                                    <action selector="sendButton:" destination="ath-be-sBM" eventType="touchUpInside" id="j7E-U4-twE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eUW-tL-Tc2" firstAttribute="top" secondItem="DW5-LS-Hb9" secondAttribute="top" id="1h0-wa-huF"/>
+                            <constraint firstItem="GQQ-SE-HMF" firstAttribute="leading" secondItem="GvY-Vn-mil" secondAttribute="leading" constant="22" id="4uW-m9-mhJ"/>
+                            <constraint firstItem="9s4-Gx-VDv" firstAttribute="leading" secondItem="GvY-Vn-mil" secondAttribute="leading" constant="33" id="6nR-PW-CUe"/>
+                            <constraint firstItem="9s4-Gx-VDv" firstAttribute="top" secondItem="rSG-9f-QFr" secondAttribute="bottom" constant="18" id="8tV-xj-hJj"/>
+                            <constraint firstItem="u4r-xh-onM" firstAttribute="leading" secondItem="GvY-Vn-mil" secondAttribute="leading" constant="33" id="A0A-Os-g38"/>
+                            <constraint firstItem="sky-Dz-Sqd" firstAttribute="leading" secondItem="GvY-Vn-mil" secondAttribute="leading" constant="33" id="COd-Qe-npN"/>
+                            <constraint firstItem="GvY-Vn-mil" firstAttribute="trailing" secondItem="sky-Dz-Sqd" secondAttribute="trailing" constant="33" id="GtL-0E-9Zy"/>
+                            <constraint firstItem="eUW-tL-Tc2" firstAttribute="leading" secondItem="DW5-LS-Hb9" secondAttribute="leading" id="K0v-ma-AlC"/>
+                            <constraint firstItem="rSG-9f-QFr" firstAttribute="leading" secondItem="GvY-Vn-mil" secondAttribute="leading" constant="33" id="Ne4-dL-V1q"/>
+                            <constraint firstItem="rSG-9f-QFr" firstAttribute="top" secondItem="sky-Dz-Sqd" secondAttribute="bottom" constant="18" id="Ne6-DB-pyu"/>
+                            <constraint firstItem="GvY-Vn-mil" firstAttribute="trailing" secondItem="GQQ-SE-HMF" secondAttribute="trailing" constant="22" id="Pjy-fa-j5D"/>
+                            <constraint firstItem="GvY-Vn-mil" firstAttribute="trailing" secondItem="rSG-9f-QFr" secondAttribute="trailing" constant="33" id="Vn9-6h-7lF"/>
+                            <constraint firstItem="GvY-Vn-mil" firstAttribute="trailing" secondItem="9s4-Gx-VDv" secondAttribute="trailing" constant="33" id="ah6-EP-hIz"/>
+                            <constraint firstItem="GvY-Vn-mil" firstAttribute="trailing" secondItem="u4r-xh-onM" secondAttribute="trailing" constant="33" id="di9-B2-b3f"/>
+                            <constraint firstItem="u4r-xh-onM" firstAttribute="top" secondItem="eUW-tL-Tc2" secondAttribute="bottom" constant="64" id="iqY-Rm-61D"/>
+                            <constraint firstAttribute="trailing" secondItem="eUW-tL-Tc2" secondAttribute="trailing" id="nsR-O4-Yak"/>
+                            <constraint firstItem="GvY-Vn-mil" firstAttribute="bottom" secondItem="GQQ-SE-HMF" secondAttribute="bottom" constant="22" id="pua-NL-i3e"/>
+                            <constraint firstItem="sky-Dz-Sqd" firstAttribute="top" secondItem="u4r-xh-onM" secondAttribute="bottom" constant="18" id="wIk-jX-8fp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GvY-Vn-mil"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDz-nZ-92y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3861.5999999999999" y="-446.62668665667172"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sendButton" width="331" height="59"/>
+    </resources>
+</document>
