@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .current()
             .requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
         let keychain = KeychainSwift()
+//        keychain.delete("fjToken")
         if keychain.get("fjToken") != nil {
         
             self.window = UIWindow(frame: UIScreen.main.bounds)

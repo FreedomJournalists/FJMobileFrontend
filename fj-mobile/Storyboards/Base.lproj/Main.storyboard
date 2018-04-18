@@ -21,14 +21,11 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="hHT-Xf-Qil">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="Lyu-KZ-08T">
-                                <rect key="frame" x="28" y="62" width="319" height="543"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="Lyu-KZ-08T">
+                                <rect key="frame" x="28" y="178.5" width="319" height="448.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyc-7n-73a">
-                                        <rect key="frame" x="34" y="0.0" width="251" height="43"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="43" id="cxK-vU-9me"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyc-7n-73a">
+                                        <rect key="frame" x="34" y="0.0" width="251" height="38.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="CREATE ACCOUNT">
                                                 <attributes>
@@ -41,7 +38,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Pnn-Lx-eiJ">
-                                        <rect key="frame" x="0.0" y="133" width="319" height="237"/>
+                                        <rect key="frame" x="0.0" y="83.5" width="319" height="237"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="YzL-cI-Sbp">
                                                 <rect key="frame" x="0.0" y="0.0" width="319" height="37"/>
@@ -145,7 +142,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="fPs-V8-73A">
-                                        <rect key="frame" x="0.0" y="460" width="319" height="83"/>
+                                        <rect key="frame" x="0.0" y="365.5" width="319" height="83"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RF1-L2-k5H" userLabel="signUpButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="319" height="46"/>
@@ -182,7 +179,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="hHT-Xf-Qil" secondAttribute="trailing" id="1bu-ov-2iQ"/>
-                            <constraint firstItem="6DB-zr-tcv" firstAttribute="bottom" secondItem="Lyu-KZ-08T" secondAttribute="bottom" constant="62" id="AJK-SH-QFW"/>
+                            <constraint firstItem="6DB-zr-tcv" firstAttribute="bottom" secondItem="Lyu-KZ-08T" secondAttribute="bottom" constant="40" id="AJK-SH-QFW"/>
                             <constraint firstItem="hHT-Xf-Qil" firstAttribute="top" secondItem="nZR-KP-jHL" secondAttribute="top" id="Sgl-9e-6Tm"/>
                             <constraint firstItem="hHT-Xf-Qil" firstAttribute="bottom" secondItem="6DB-zr-tcv" secondAttribute="bottom" id="UVO-be-lmV"/>
                             <constraint firstItem="6DB-zr-tcv" firstAttribute="trailing" secondItem="Lyu-KZ-08T" secondAttribute="trailing" constant="28" id="cXA-aQ-DUn"/>
@@ -216,11 +213,11 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Cg9-8P-4Gz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="q5k-iL-oKp">
-                                <rect key="frame" x="28" y="62" width="319" height="547.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="q5k-iL-oKp">
+                                <rect key="frame" x="28" y="62" width="319" height="569.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2G-Id-UuT">
-                                        <rect key="frame" x="69" y="0.0" width="181" height="84.5"/>
+                                        <rect key="frame" x="69" y="0.0" width="181" height="226.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="FREEDOM JOURNALISM">
                                                 <attributes>
@@ -233,7 +230,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="L30-yg-cna">
-                                        <rect key="frame" x="0.0" y="234.5" width="319" height="87"/>
+                                        <rect key="frame" x="0.0" y="316.5" width="319" height="87"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="oNQ-8j-TUy">
                                                 <rect key="frame" x="0.0" y="0.0" width="319" height="37"/>
@@ -286,7 +283,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="FFn-Ha-3vl">
-                                        <rect key="frame" x="0.0" y="471.5" width="319" height="76"/>
+                                        <rect key="frame" x="0.0" y="493.5" width="319" height="76"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaH-As-FsI" userLabel="SignIn Button">
                                                 <rect key="frame" x="0.0" y="0.0" width="319" height="46"/>
@@ -323,7 +320,7 @@
                         <constraints>
                             <constraint firstItem="q5k-iL-oKp" firstAttribute="leading" secondItem="jPu-NG-3Ov" secondAttribute="leading" constant="28" id="Eem-DQ-D2T"/>
                             <constraint firstItem="jPu-NG-3Ov" firstAttribute="trailing" secondItem="q5k-iL-oKp" secondAttribute="trailing" constant="28" id="Nsy-dO-mT0"/>
-                            <constraint firstItem="jPu-NG-3Ov" firstAttribute="bottom" secondItem="q5k-iL-oKp" secondAttribute="bottom" constant="57.5" id="P5B-pK-eFx"/>
+                            <constraint firstItem="jPu-NG-3Ov" firstAttribute="bottom" secondItem="q5k-iL-oKp" secondAttribute="bottom" constant="35.5" id="P5B-pK-eFx"/>
                             <constraint firstAttribute="trailing" secondItem="Cg9-8P-4Gz" secondAttribute="trailing" id="YpD-TT-hbT"/>
                             <constraint firstItem="jPu-NG-3Ov" firstAttribute="trailing" secondItem="q5k-iL-oKp" secondAttribute="trailing" constant="28" id="aGS-he-rDN"/>
                             <constraint firstItem="q5k-iL-oKp" firstAttribute="leading" secondItem="jPu-NG-3Ov" secondAttribute="leading" constant="28" id="cUP-ec-MrZ"/>
@@ -361,6 +358,6 @@
         <image name="underline" width="367" height="2"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8gK-9E-KPp"/>
+        <segue reference="219-ug-aUo"/>
     </inferredMetricsTieBreakers>
 </document>
