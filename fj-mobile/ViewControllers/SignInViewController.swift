@@ -23,28 +23,10 @@ class SignInViewController: UIViewController {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
         
-//        self.keychain.delete("fjToken")
         
-//        if let token = self.keychain.get("fjToken") {
-//            print("GOT HERE")
-//            print(token)
-//            DispatchQueue.main.async {
-//                self.performSegue(withIdentifier: "campaignsSegue", sender: self)
-//            }
-//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-
-//        self.keychain.delete("fjToken")
-        
-//        if let token = self.keychain.get("fjToken") {
-//            print("GOT HERE")
-//            print(token)
-//            DispatchQueue.main.async {
-//                self.performSegue(withIdentifier: "campaignsSegue", sender: self)
-//            }
-//        }
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -105,14 +87,22 @@ class SignInViewController: UIViewController {
         }
     }
     
+    func incompleteAlert() {
+        let alert = UIAlertController(title: "Incomplete", message: "Some of the required information is not filled in", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
     func logInUser(completion: @escaping () -> ()) {
         
         guard let email = emailTextField.text else {
-            displayMessage(userMessage: "Email is missing.")
+            incompleteAlert()
             return
         }
         guard let password = passwordTextField.text else {
-            displayMessage(userMessage: "Password is missing.")
+            incompleteAlert()
             return
         }
     

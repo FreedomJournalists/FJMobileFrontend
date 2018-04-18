@@ -107,9 +107,18 @@ class CreateCampaignViewController: UIViewController, UITextViewDelegate {
 
 extension CreateCampaignViewController {
     func postCampaign(completion: @escaping () -> ()) {
-        guard let description = descriptionTextView.text else {return}
-        guard let goal = Int(goalTextField.text!) else {return}
-        guard let title = titleTextField.text else {return}
+        guard let description = descriptionTextView.text else {
+            incompleteAlert()
+            return
+        }
+        guard let goal = Int(goalTextField.text!) else {
+            incompleteAlert()
+            return
+        }
+        guard let title = titleTextField.text else {
+            incompleteAlert()
+            return
+        }
 //        guard let image = campaignImage else {return}
         
 //        // Create path.
@@ -125,6 +134,14 @@ extension CreateCampaignViewController {
             completion()
             }
         }
+    }
+    
+    func incompleteAlert() {
+        let alert = UIAlertController(title: "Incomplete", message: "Some of the required information is not filled in", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        self.present(alert, animated: true)
     }
     
     func uploadImage(image: UIImage) {

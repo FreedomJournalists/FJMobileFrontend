@@ -31,6 +31,22 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
 //        self.model = generateRandomData()
         
 //        Navigation bar setup
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.85, green:0.68, blue:0.51, alpha:1.0)
+        navigationController?.navigationBar.tintColor = UIColor.black
+
+        self.tableView.separatorStyle = .none
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+
+
+        self.loadCampaigns {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
 //        navigationController?.navigationBar.barTintColor = UIColor(red:0.85, green:0.68, blue:0.51, alpha:1.0)
 //        navigationController?.navigationBar.tintColor = UIColor.black
 //
@@ -44,22 +60,6 @@ class CampaignsViewController: UIViewController, UITableViewDelegate, UITableVie
 //                self.tableView.reloadData()
 //            }
 //        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.barTintColor = UIColor(red:0.85, green:0.68, blue:0.51, alpha:1.0)
-        navigationController?.navigationBar.tintColor = UIColor.black
-        
-        self.tableView.separatorStyle = .none
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        
-        
-        self.loadCampaigns {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
     }
     
 //       Set up tableView

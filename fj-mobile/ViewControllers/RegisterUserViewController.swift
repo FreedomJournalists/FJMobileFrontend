@@ -135,12 +135,20 @@ extension RegisterUserViewController {
 
 extension RegisterUserViewController {
     
+    func incompleteAlert() {
+        let alert = UIAlertController(title: "Incomplete", message: "Some of the required information is not filled in", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
     func createUser(completion: @escaping () -> ()) {
         guard let firstName = self.firstNameTextField.text, !firstName.isEmpty, let lastName = self.lastNameTextField.text, !lastName.isEmpty,
             let email = self.emailTextField.text, !email.isEmpty, let nickname = self.nicknameTextField.text, !nickname.isEmpty, let password = self.passwordTextField.text,
             !password.isEmpty else {
                 DispatchQueue.main.async {
-                    self.displayMessage(userMessage: "Invalid Inputs.")
+                    self.incompleteAlert()
                 }
             return
         }
