@@ -84,7 +84,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func didClickLogOut(cell: ProfileInfoCell) {
         print("clicked")
         self.keychain.delete("fjToken")
-        self.dismiss(animated: true, completion: nil)
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let loginVC = mainStoryboard.instantiateInitialViewController()
+        self.present(loginVC!, animated: true)
     }
 }
 

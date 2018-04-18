@@ -27,8 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if keychain.get("fjToken") != nil {
         
             self.window = UIWindow(frame: UIScreen.main.bounds)
-            
-            
         
             let storyboard = UIStoryboard(name: "Campaigns", bundle: nil)
         
